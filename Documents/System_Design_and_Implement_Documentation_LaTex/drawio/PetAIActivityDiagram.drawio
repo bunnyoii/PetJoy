@@ -1,0 +1,109 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
+    <mxGraphModel dx="1276" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="280" y="130" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-3" value="打开宠物AI界面" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="240" y="180" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-3" target="NiOZ_CHgmBwp2koZttZZ-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="295" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-1" target="NiOZ_CHgmBwp2koZttZZ-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="120" as="sourcePoint" />
+            <mxPoint x="340" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-7" value="欢迎界面概览" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="240" y="260" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-8" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="255" y="330" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-7" target="NiOZ_CHgmBwp2koZttZZ-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="490" as="sourcePoint" />
+            <mxPoint x="260" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-12" value="直接在输入框中&lt;div&gt;输入问题&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="360" y="400" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-13" value="采用示例问题&lt;div&gt;作为输入&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="130" y="400" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-8" target="NiOZ_CHgmBwp2koZttZZ-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="340" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-8" target="NiOZ_CHgmBwp2koZttZZ-13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="190" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-16" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="255" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-13" target="NiOZ_CHgmBwp2koZttZZ-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="180" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-12" target="NiOZ_CHgmBwp2koZttZZ-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="415" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-16" target="NiOZ_CHgmBwp2koZttZZ-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="295" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-20" value="点击发送按钮" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="240" y="540" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-20" target="NiOZ_CHgmBwp2koZttZZ-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="440" as="sourcePoint" />
+            <mxPoint x="300" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-22" value="系统处理请求，&lt;div&gt;显示加载中&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="240" y="610" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-24" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="640" as="sourcePoint" />
+            <mxPoint x="295" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-25" value="显示AI助手回复" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="240" y="680" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-26" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NiOZ_CHgmBwp2koZttZZ-25" target="NiOZ_CHgmBwp2koZttZZ-27" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="640" as="sourcePoint" />
+            <mxPoint x="295" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NiOZ_CHgmBwp2koZttZZ-27" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="280" y="750" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

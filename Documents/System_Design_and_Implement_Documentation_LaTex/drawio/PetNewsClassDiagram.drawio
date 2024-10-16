@@ -1,0 +1,190 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1290" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-21" value="NewsComment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="585" y="900" width="410" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-22" value="&lt;div&gt;&lt;div&gt;- comment_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- parent_comment_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- content:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;varchar(128)&lt;/div&gt;&lt;div&gt;- comment_time:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- like_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- dislike_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UeT4o4bnYTyEsBU6JhWT-21" vertex="1">
+          <mxGeometry y="26" width="410" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="UeT4o4bnYTyEsBU6JhWT-21" vertex="1">
+          <mxGeometry y="150" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-24" value="&lt;div&gt;&lt;div&gt;+ GET /api/news-comment(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsComment&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment {[FromBody] NewsComment newsComment}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsComment&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-comment/{id: int}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;NewsComment&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment/{id: int} {[FromBody] NewsComment newsComment}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment/news-{id: int}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsComment&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UeT4o4bnYTyEsBU6JhWT-21" vertex="1">
+          <mxGeometry y="158" width="410" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-25" value="News" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="630" y="380" width="340" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-26" value="&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- tag_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- title:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(64)&lt;/div&gt;&lt;div&gt;- summary:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(128)&lt;/div&gt;&lt;div&gt;- content:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; clob&lt;/div&gt;&lt;div&gt;- creation_date:&amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- update_date:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- cover_url:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(256)&lt;/div&gt;&lt;div&gt;- is_sticky:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; number(1)&lt;/div&gt;&lt;div&gt;- like_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- dislike_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- favorite_count:&amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- comment_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UeT4o4bnYTyEsBU6JhWT-25" vertex="1">
+          <mxGeometry y="26" width="340" height="214" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-27" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="UeT4o4bnYTyEsBU6JhWT-25" vertex="1">
+          <mxGeometry y="240" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-28" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news(): Task&amp;lt;ActionResult&amp;lt;News&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news {[FromBody] News news}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news/{id: int}: Task&amp;lt;ActionResult&amp;lt;News&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news/{id: int}: Task&amp;lt;ActionResult&amp;lt;News&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news/{id: int} {[FromBody] News news}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news/filter-by-tag {[FromBody] List&amp;lt;int&amp;gt; tagIds}: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;int&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news/filter-by-tag:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;object&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UeT4o4bnYTyEsBU6JhWT-25" vertex="1">
+          <mxGeometry y="248" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-29" value="NewsTag" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="660" y="50" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-30" value="&lt;div&gt;- tag_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- tag:&amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(16)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UeT4o4bnYTyEsBU6JhWT-29" vertex="1">
+          <mxGeometry y="26" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="UeT4o4bnYTyEsBU6JhWT-29" vertex="1">
+          <mxGeometry y="60" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UeT4o4bnYTyEsBU6JhWT-32" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-tag(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsTag&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-tag {[FromBody] NewsTag newsTag}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-tag/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsTag&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-tag/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsTag&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-tag/{id: int} {[FromBody] NewsTag newsTag}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UeT4o4bnYTyEsBU6JhWT-29" vertex="1">
+          <mxGeometry y="68" width="280" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-0" value="NewsLike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="145" y="690" width="330" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-1" value="&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- like_time:&amp;nbsp; date&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-0" vertex="1">
+          <mxGeometry y="26" width="330" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="qPoDZlgnAXkVsTIW5KfH-0" vertex="1">
+          <mxGeometry y="80" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-3" value="&lt;div&gt;&lt;div&gt;+ GET /api/news-like(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsLike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-like {[FromBody] NewsLike newsLike}:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ GET /api/news-like/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsLike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-like/{newsId: id}-{userId: id}: Task&amp;lt;ActionResult&amp;lt;NewsLike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-like/{newsId: int}-{userId: int} {[FromBody] NewsLike newsLike}: Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-0" vertex="1">
+          <mxGeometry y="88" width="330" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-4" value="NewsDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="135" y="290" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-5" value="&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- dislike_time: date&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-4" vertex="1">
+          <mxGeometry y="26" width="340" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="qPoDZlgnAXkVsTIW5KfH-4" vertex="1">
+          <mxGeometry y="80" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-7" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-dislike(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsDislike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-dislike {[FromBody] NewsDislike newsDislike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-dislike/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsDislike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-dislike/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsDislike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-dislike/{newsId: int}-{userId: int} {[FromBody] NewsDislike newsDislike}:&amp;nbsp; Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-4" vertex="1">
+          <mxGeometry y="88" width="340" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-8" value="NewsCommentLike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1130" y="1090" width="340" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-9" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;- comment_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- like_time:&amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-8" vertex="1">
+          <mxGeometry y="26" width="340" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="qPoDZlgnAXkVsTIW5KfH-8" vertex="1">
+          <mxGeometry y="80" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-11" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-comment-like(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsCommentLike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment-like {[FromBody] NewsCommentLike newsCommentLike}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment-like/{commentId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentLike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-comment-like/{commentId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentLike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment-like/{commentId: int}-{userId: int} {[FromBody] NewsCommentLike newsCommentLike}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-8" vertex="1">
+          <mxGeometry y="88" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-12" value="NewsCommentDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="140" y="1090" width="330" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-13" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;- comment_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- dislike_time: date&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-12" vertex="1">
+          <mxGeometry y="26" width="330" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="qPoDZlgnAXkVsTIW5KfH-12" vertex="1">
+          <mxGeometry y="80" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-15" value="&lt;div&gt;&lt;div&gt;+ GET /api/news-comment-dislike(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsCommentDislike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment-dislike {[FromBody] NewsCommentDislike newsCommentDislike}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment-dislike/{commentId: int}-{userId: int}:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;NewsCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ DELETE /api/news-comment-dislike/{commentId: int}-{userId: int}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;NewsCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment-dislike/{commentId: int}-{userId: int} {[FromBody] NewsCommentDislike newsCommentDislike}: Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-12" vertex="1">
+          <mxGeometry y="88" width="330" height="192" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-17" value="NewsFavorite" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1130" y="460" width="340" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-18" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- favorite_time: date&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-17" vertex="1">
+          <mxGeometry y="26" width="340" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="qPoDZlgnAXkVsTIW5KfH-17" vertex="1">
+          <mxGeometry y="80" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-20" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-favorite(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsFavorite&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-favorite {[FromBody] NewsFavorite newsFavorite}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-favorite/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-favorite/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-favorite/{newsId: int}-{userId: int} {[FromBody] NewsFavorite newsFavorite}:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-17" vertex="1">
+          <mxGeometry y="88" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-21" value="NewsCommentReport" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="625" y="1430" width="330" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-22" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;- news_comment_report_id: int&lt;/div&gt;&lt;div&gt;- reporter_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- reported_user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- reported_news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- reported_comment_id:&amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- report_reason:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(128)&lt;/div&gt;&lt;div&gt;- report_time:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- status:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;number(1)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-21" vertex="1">
+          <mxGeometry y="26" width="330" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="qPoDZlgnAXkVsTIW5KfH-21" vertex="1">
+          <mxGeometry y="150" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="qPoDZlgnAXkVsTIW5KfH-24" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-comment-report(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsCommentReport&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment-report {[FromBody] NewsCommentReport newsCommentReport}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment-report/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-comment-report/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment-report/{id: int} {[FromBody] NewsCommentReport newsCommentReport}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="qPoDZlgnAXkVsTIW5KfH-21" vertex="1">
+          <mxGeometry y="158" width="330" height="192" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-9" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.499;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UeT4o4bnYTyEsBU6JhWT-25" target="UeT4o4bnYTyEsBU6JhWT-32" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="320" as="sourcePoint" />
+            <mxPoint x="870" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-10" value="拥有" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=270;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="760" y="310" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-11" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0;entryY=0.159;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="UeT4o4bnYTyEsBU6JhWT-26" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="475" y="440" as="sourcePoint" />
+            <mxPoint x="628" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-12" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0;entryY=0.709;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="UeT4o4bnYTyEsBU6JhWT-28" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="475" y="750" as="sourcePoint" />
+            <mxPoint x="630" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-13" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.003;exitY=0.434;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="qPoDZlgnAXkVsTIW5KfH-20" target="UeT4o4bnYTyEsBU6JhWT-26" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="810" y="550" as="sourcePoint" />
+            <mxPoint x="970" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-19" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="800" y="900" as="sourcePoint" />
+            <mxPoint x="800" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-20" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.003;entryY=0.822;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="UeT4o4bnYTyEsBU6JhWT-24" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="470" y="1200" as="sourcePoint" />
+            <mxPoint x="580" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-22" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.997;entryY=0.708;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="UeT4o4bnYTyEsBU6JhWT-24" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1129" y="1180" as="sourcePoint" />
+            <mxPoint x="1196" y="1179" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-23" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="qPoDZlgnAXkVsTIW5KfH-21" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="610" y="1290" as="sourcePoint" />
+            <mxPoint x="788" y="1231" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-26" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="520" y="410" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-27" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1020" y="590" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-28" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="520" y="720" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-29" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="797" y="850" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-30" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="780" y="1340" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-31" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1040" y="1153" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jYcJZqUxtBblVqde8063-32" value="&lt;b&gt;0..*&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="490" y="1170" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

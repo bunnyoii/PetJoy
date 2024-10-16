@@ -1,0 +1,1037 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="第 1 页" id="Oy6vePk9fZv1lUs2WGVE">
+    <mxGraphModel dx="9907" dy="6478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="88wGjKEd4IUI13QPvUiT-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;User&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="170" width="1050" height="830" as="geometry" />
+        </mxCell>
+        <mxCell id="88wGjKEd4IUI13QPvUiT-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;- userId: int&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- userName: int&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- password: string&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- telephone: string&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- registrationDate: date-time&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- lastLoginTime: date-time&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;role: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- status: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- avatarUrl: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- profile: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- gender: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;birthdate:&amp;nbsp;date-time&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;experiencePoints: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;followsCount: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;followedCount: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;favoritesCount: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;favoritedCount: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;likesCount: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;likedCount: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-&amp;nbsp;messageCount: int&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="88wGjKEd4IUI13QPvUiT-1" vertex="1">
+          <mxGeometry y="40" width="1050" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="88wGjKEd4IUI13QPvUiT-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="88wGjKEd4IUI13QPvUiT-1" vertex="1">
+          <mxGeometry y="430" width="1050" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="88wGjKEd4IUI13QPvUiT-4" value="&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET /api/user: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;User&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; white-space: pre;&quot;&gt;+ GET &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user/{id: int}: &lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; white-space: pre;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;User&amp;gt;&amp;gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; white-space: pre;&quot;&gt;+ GET &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user/user-name/{id: int}: &lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; white-space: pre;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;User&amp;gt;&amp;gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; white-space: pre;&quot;&gt;+ GET &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/telephone/{id: int}: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;User&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/avatar-url/{id: int}: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;User&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/role/{id: int}: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;User&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ DELETE &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/{id: int}: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;User&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ POST &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/{id: int} {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}: &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/personal-information/{id: int} {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}: &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/avatar-url/{id: int} {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}: &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/last-login-time/{id: int} {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}: &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/password/{id: int} {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}: &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/telephone/{id: int} {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] User user}: &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/check-username-unique/{username: string}: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;int&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/check-telephone-unique/{telephone: string}: &lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;int&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ POST &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user/verify-password {&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;[FromBody] PasswordVerificationRequest passwordVerificationRequest}:  &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; white-space: pre;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;int&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; orphans: 2; text-align: left; text-indent: 0px; widows: 2; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-transform: none; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot; size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-transform: none; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user/get-user-id-by-telephone/{telephone: string}: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;int&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="88wGjKEd4IUI13QPvUiT-1" vertex="1">
+          <mxGeometry y="450" width="1050" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;UserFeedback&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-440" y="-250" width="760" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;- feedbackId: int&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- feedbackCategory: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- feedbackContent: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- feedbackTime: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- email: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- telephone: string&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-1" vertex="1">
+          <mxGeometry y="40" width="760" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="PzyJ5SBVM5l6bjQnl_92-1" vertex="1">
+          <mxGeometry y="160" width="760" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-4" value="&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET /api/user-feedback: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;UserFeedback&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET  /api/user-feedback/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserFeedback&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ DELETE /api/user-feedback/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserFeedback&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ POST /api/user-feedback {[FromBody] UserFeedback userFeedback}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user-feedback/{id: int}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt; {[FromBody] UserFeedback userFeedback}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-1" vertex="1">
+          <mxGeometry y="180" width="760" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.997;exitY=-0.065;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="PzyJ5SBVM5l6bjQnl_92-4" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="880" y="40" as="sourcePoint" />
+            <mxPoint x="671" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="-78" />
+              <mxPoint x="420" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-6" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;UserCheckin&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-410" y="160" width="730" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-7" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;- checkInId: int&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- userId: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- checkInTime: date-time&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-6" vertex="1">
+          <mxGeometry y="40" width="730" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="PzyJ5SBVM5l6bjQnl_92-6" vertex="1">
+          <mxGeometry y="100" width="730" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-9" value="&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET /api/user-check-in: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;UserCheckIn&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET  /api/user-check-in/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserCheckIn&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ DELETE /api/user-check-in/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserCheckIn&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ POST /api/user-check-in {[FromBody] UserCheckIn userCheckIn}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user-check-in/{id: int}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250);&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; {[FromBody] UserCheckIn userCheckIn}&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/user-check-in/check-by-date/{userId: int}-{date: date-time}: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;ActionResult&amp;lt;int&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-6" vertex="1">
+          <mxGeometry y="120" width="730" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-13" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0.394;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="88wGjKEd4IUI13QPvUiT-2" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="320" y="364" as="sourcePoint" />
+            <mxPoint x="719" y="609" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-14" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;UserFollow&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-520" y="500" width="840" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-15" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;- userId: int&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- followerId: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- followTime: date-time&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-14" vertex="1">
+          <mxGeometry y="40" width="840" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="PzyJ5SBVM5l6bjQnl_92-14" vertex="1">
+          <mxGeometry y="100" width="840" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-17" value="&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET /api/user-follow: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;UserFollow&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET  /api/user-follow/{userId}-{followerId: int}: Task&amp;lt;ActionResult&amp;lt;UserFollow&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ DELETE /api/user-follow/{userId: int}-{followerId: int}: Task&amp;lt;ActionResult&amp;lt;UserFollow&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ POST /api/user-follow {[FromBody] UserFollow userFollow}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user-follow/{userId: int}-{followerId: int}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250);&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; {[FromBody] UserFollow userFollow}&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-14" vertex="1">
+          <mxGeometry y="120" width="840" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-18" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0.394;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="320" y="630" as="sourcePoint" />
+            <mxPoint x="670" y="630" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-19" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;UserMessage&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-410" y="800" width="730" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-20" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;- messageId: int&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- userId: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- commenterId: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- message: string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- commentTime: date-time&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-19" vertex="1">
+          <mxGeometry y="40" width="730" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="PzyJ5SBVM5l6bjQnl_92-19" vertex="1">
+          <mxGeometry y="140" width="730" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-22" value="&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET /api/user-message: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;UserMessage&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET  /api/user-message/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserMessage&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ DELETE /api/user-message/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserMessage&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ POST /api/user-message {[FromBody] UserMessage userMessage}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user-message/{id: int}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250);&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; {[FromBody] UserMessage userMessage}&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-19" vertex="1">
+          <mxGeometry y="160" width="730" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-23" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0.394;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="320" y="860" as="sourcePoint" />
+            <mxPoint x="670" y="860" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-24" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;UserMessage&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="1160" width="730" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-25" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;- userId: int&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;- isTelephonePublic: int&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isRegistrationDatePublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isProfilePublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isGenderPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isBirthdatePublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isLevelPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isFollowingCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isFollowersCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isFavoritesCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isFavoredCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isLikesCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isLikedCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;isMessageCountPublic: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;allowFollowing: int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 16px;&quot;&gt;receiveAdminNotifications: int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;-&amp;nbsp;receiveUserNotifications: int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-24" vertex="1">
+          <mxGeometry y="40" width="730" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-26" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="PzyJ5SBVM5l6bjQnl_92-24" vertex="1">
+          <mxGeometry y="370" width="730" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-27" value="&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET /api/user-setting: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;UserSetting&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ GET  /api/user-setting/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserSetting&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ DELETE /api/user-setting/{id: int}: Task&amp;lt;ActionResult&amp;lt;UserSetting&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; text-align: start; white-space: pre; background-color: rgb(250, 250, 250); float: none; display: inline !important;&quot;&gt;+ POST /api/user-setting {[FromBody] UserSetting userSetting}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;+ PUT &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/user-setting/&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;{id: int}&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250);&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; {[FromBody] UserSetting userSetting}&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Noto Sans SC&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Noto Sans SC&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PzyJ5SBVM5l6bjQnl_92-24" vertex="1">
+          <mxGeometry y="390" width="730" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-28" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;1..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="0.0255" y="-31" width="80" relative="1" as="geometry">
+            <mxPoint x="400" y="1160" as="sourcePoint" />
+            <mxPoint x="679" y="969" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="969" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-41" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.84;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.445;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-135" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1550" y="-660" as="sourcePoint" />
+            <mxPoint x="1550" y="173.04000000000008" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-49" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.668;exitY=0.998;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-98" edge="1">
+          <mxGeometry x="-0.0521" y="1" width="80" relative="1" as="geometry">
+            <mxPoint x="1050" y="-340" as="sourcePoint" />
+            <mxPoint x="787" y="170" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-53" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.998;entryY=0.102;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.45;exitY=1.029;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-119" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="2128.2999999999997" y="-250" as="sourcePoint" />
+            <mxPoint x="1720" y="303.78" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2155" y="304" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-57" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1.001;entryY=0.24;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.353;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-127" target="88wGjKEd4IUI13QPvUiT-2" edge="1">
+          <mxGeometry x="0.0676" width="80" relative="1" as="geometry">
+            <mxPoint x="2180" y="280" as="sourcePoint" />
+            <mxPoint x="1940" y="252" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2480" y="304" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-62" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0;exitY=0.602;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.003;entryY=0.363;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-131" edge="1">
+          <mxGeometry x="-0.1587" y="1" width="80" relative="1" as="geometry">
+            <mxPoint x="2765.86" y="-389.9980000000001" as="sourcePoint" />
+            <mxPoint x="1719.9999999999995" y="302.26000000000016" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2720" y="-390" />
+              <mxPoint x="2720" y="-280" />
+              <mxPoint x="2720" y="302" />
+              <mxPoint x="2480" y="302" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-80" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="-0.0521" y="1" width="80" relative="1" as="geometry">
+            <mxPoint x="2041" y="609.4656892200455" as="sourcePoint" />
+            <mxPoint x="1720" y="610" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-83" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.163;exitY=-0.004;exitDx=0;exitDy=0;entryX=0.391;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="760.0000000000002" y="1167.6999999999998" as="sourcePoint" />
+            <mxPoint x="760.4600000000003" y="1000.0000000000001" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-93" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-49" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1960" y="973.4098939929331" as="sourcePoint" />
+            <mxPoint x="1719" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2085" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-102" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.583;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-57" edge="1" target="88wGjKEd4IUI13QPvUiT-4">
+          <mxGeometry x="-0.1533" y="5" width="80" relative="1" as="geometry">
+            <mxPoint x="2265.95" y="710.672" as="sourcePoint" />
+            <mxPoint x="1723" y="711" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2965" y="842" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-106" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.938;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.213;exitY=-0.001;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-18" target="88wGjKEd4IUI13QPvUiT-4" edge="1">
+          <mxGeometry x="0.1466" width="80" relative="1" as="geometry">
+            <mxPoint x="1653" y="1157" as="sourcePoint" />
+            <mxPoint x="1380" y="1868" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PzyJ5SBVM5l6bjQnl_92-114" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.474;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-53" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="2120" y="840.3380000000002" as="sourcePoint" />
+            <mxPoint x="1720" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2510" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-4" value="PostDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1160" width="430" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-5" value="- postId: integer&lt;div&gt;- userId: integer&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- dislikeTime: string (date-time)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-4">
+          <mxGeometry y="26" width="430" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-4">
+          <mxGeometry y="80" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-7" value="+ GET /api/post-dislike:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostDislike&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-dislike {[FromBody] PostDislike postDislike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-dislike/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostDislike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-dislike/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostDislike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-dislike/{postId}-{userId} {[FromBody] PostDislike postDislike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-4">
+          <mxGeometry y="88" width="430" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-8" value="Post" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="1440" width="420" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-9" value="- postId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- categoryId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- title: string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- creationDate: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- updateDate: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- isSticky: integer&lt;/div&gt;&lt;div&gt;- likeCount: integer&lt;/div&gt;&lt;div&gt;- dislikeCount: integer&lt;/div&gt;&lt;div&gt;- favoriteCount: integer&lt;/div&gt;&lt;div&gt;- commentCount: integer&amp;nbsp;&lt;/div&gt;&lt;div&gt;- imageUrl: string&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-8">
+          <mxGeometry y="26" width="420" height="194" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-8">
+          <mxGeometry y="220" width="420" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-11" value="+ &lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;Post&amp;gt;&amp;gt;&lt;div&gt;+ &lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;PostPost([FromBody] Post post)}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/{id}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/{id}&lt;/span&gt;&amp;nbsp;:Task&amp;lt;ActionResult&amp;lt;Post&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/{id} {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] Post post}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/filter-by-category {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] List&amp;lt;int&amp;gt; categoryIds}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;int&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-8">
+          <mxGeometry y="228" width="420" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-12" value="PostLike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1160" width="430" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-13" value="- postId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- likeTime: string (date-time)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-12">
+          <mxGeometry y="26" width="430" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-12">
+          <mxGeometry y="80" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-15" value="+ GET /api/post-like:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostLike&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-like {[FromBody] PostLike postLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-like/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-like/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-like/{postId}-{userId} {[FromBody] PostLike postLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-12">
+          <mxGeometry y="88" width="430" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-16" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.867;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="0.1466" width="80" relative="1" as="geometry">
+            <mxPoint x="1254.17" y="1160" as="sourcePoint" />
+            <mxPoint x="1254.17" y="1003" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1254.17" y="1080" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.867;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="0.1466" width="80" relative="1" as="geometry">
+            <mxPoint x="1500" y="1440" as="sourcePoint" />
+            <mxPoint x="1500" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1500" y="1077" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-18" value="PostFavorite" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="1160" width="440" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-19" value="- postId: integer &lt;div&gt;- userId: integer&lt;/div&gt;&lt;div&gt;- favoriteTime: string (date-time)&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-18">
+          <mxGeometry y="26" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-18">
+          <mxGeometry y="80" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-21" value="+ GET /api/post-favorite:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostFavorite&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-favorite {[FromBody] PostFavorite postFavorite}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-favorite/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-favorite/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-favorite/{postId}-{userId} {[FromBody] PostFavorite postFavorite}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-18">
+          <mxGeometry y="88" width="440" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-22" value="PostCategory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1520" width="430" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-23" value="- categoryId: integer&lt;div&gt;- category: string&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-22">
+          <mxGeometry y="26" width="430" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-22">
+          <mxGeometry y="60" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-25" value="+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCategory&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostCategory postCategory}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCategory&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCategory&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category/{id}&lt;/span&gt;&amp;nbsp;{Task&amp;lt;IActionResult&amp;gt;}:&amp;nbsp;[FromBody] PostCategory postCategory&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-22">
+          <mxGeometry y="68" width="430" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-27" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;1..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.511;exitY=1.024;exitDx=0;exitDy=0;entryX=0.071;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-7" target="6tfv7dKoM0C6FOqmf1Kl-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="870.0000000000002" y="1577.6999999999998" as="sourcePoint" />
+            <mxPoint x="870.4600000000003" y="1410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="1420" />
+              <mxPoint x="1320" y="1420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-28" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;1..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.653;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1320.79" y="1361.6799999999998" as="sourcePoint" />
+            <mxPoint x="1321" y="1440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1321" y="1410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-29" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;1..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.181;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-21">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1320" y="1361.6799999999998" as="sourcePoint" />
+            <mxPoint x="1320.21" y="1440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1640" y="1420" />
+              <mxPoint x="1320" y="1420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-30" value="PostReport" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1820" width="440" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-31" value="- postReportId: integer&lt;div&gt;- reporterId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedUserId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedPostId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportReason: string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- status: integer&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-30">
+          <mxGeometry y="26" width="440" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-30">
+          <mxGeometry y="130" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-33" value="+ GET /api/post-report:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostReport&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-report {[FromBody] PostReport postReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-report/{id}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostReport&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-report/{id}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostReport&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-report/{id} {[FromBody] PostReport postReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-30">
+          <mxGeometry y="138" width="440" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-34" value=" PostSearchRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1846" width="440" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-35" value="- postId: integer&lt;div&gt;- title: string (nullable)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string (nullable)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-34">
+          <mxGeometry y="26" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-36" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=-0.003;entryY=0.745;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-9">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="1140" y="1610" as="sourcePoint" />
+            <mxPoint x="1300" y="1610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-37" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-36">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-39" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=-0.002;entryY=0.819;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-30" target="6tfv7dKoM0C6FOqmf1Kl-11">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="920" y="1753" as="sourcePoint" />
+            <mxPoint x="1270" y="1760" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="1760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-40" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-39">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-41" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.447;entryY=1.007;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.451;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-34" target="6tfv7dKoM0C6FOqmf1Kl-11">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="1478" y="1840" as="sourcePoint" />
+            <mxPoint x="1620" y="1860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-42" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-41">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-43" value="PostComment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2080" y="1440" width="440" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-44" value="- commentId: integer&lt;div&gt;- postId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- parentCommentId: integer (nullable)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- commentTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- likeCount: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- dislikeCount: integer&amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-43">
+          <mxGeometry y="26" width="440" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-45" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-43">
+          <mxGeometry y="160" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-46" value="+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostComment&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostComment postComment}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostComment&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostComment&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/{id} {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostComment postComment}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/post-{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostComment&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-43">
+          <mxGeometry y="168" width="440" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-47" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.996;entryY=0.761;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.001;exitY=0.041;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-46" target="6tfv7dKoM0C6FOqmf1Kl-9">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="1150" y="1620" as="sourcePoint" />
+            <mxPoint x="1299" y="1621" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-48" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-47">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-59" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-49" value="PostCommentDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="900" width="410" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-50" value="- commentId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- dislikeTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-49">
+          <mxGeometry y="26" width="410" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-51" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-49">
+          <mxGeometry y="80" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-52" value="+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCommentDislike&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostCommentDislike postCommentDislike}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike/{commentId}-{userId}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike/{commentId}-{userId}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike/{commentId}-{userId} {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostCommentDislike postCommentDislike}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-49">
+          <mxGeometry y="88" width="410" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-53" value="PostCommentLike " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="900" width="400" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-54" value="- commentId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- likeTime: string (date-time)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-53">
+          <mxGeometry y="26" width="400" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-55" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-53">
+          <mxGeometry y="80" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-56" value="+ GET /api/post-comment-like:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentLike&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-comment-like {[FromBody] PostCommentLike postCommentLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-comment-like/{commentId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-comment-like/{commentId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-comment-like/{commentId}-{userId} {[FromBody] PostCommentLike postCommentLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-53">
+          <mxGeometry y="88" width="400" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-57" value="PostCommentReport   " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2760" y="900" width="410" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-58" value="- postCommentReportId: integer&lt;div&gt;- reporterId: integer&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedUserId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedPostId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedCommentId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportReason: string (maxLength: 512, minLength: 0)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- status: integer&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-57">
+          <mxGeometry y="26" width="410" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-59" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-57">
+          <mxGeometry y="150" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-60" value="+ GET /api/post-comment-report:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCommentReport&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-comment-report {[FromBody] PostCommentReport postCommentReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-comment-report/{id} :&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-comment-report/{id}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-comment-report/{id} {[FromBody] PostCommentReport postCommentReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-57">
+          <mxGeometry y="158" width="410" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-61" value="PostCommentSearchRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2660" y="1560" width="410" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-62" value="- postId: integer  &lt;div&gt;- title: string (nullable)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string (nullable)&amp;nbsp; &amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-61">
+          <mxGeometry y="26" width="410" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-63" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.524;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-43">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="2040" y="1140" as="sourcePoint" />
+            <mxPoint x="2260" y="1440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2040" y="1320" />
+              <mxPoint x="2310" y="1320" />
+              <mxPoint x="2310" y="1440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-64" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-63">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-20" y="58" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-65" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="2370" y="1131" as="sourcePoint" />
+            <mxPoint x="2310" y="1440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2370" y="1131" />
+              <mxPoint x="2370" y="1320" />
+              <mxPoint x="2310" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-66" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-65">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-20" y="56" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-67" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="2960" y="1220" as="sourcePoint" />
+            <mxPoint x="2310" y="1440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2960" y="1220" />
+              <mxPoint x="2960" y="1320" />
+              <mxPoint x="2310" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-68" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-67">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-20" y="56" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-69" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=-0.006;exitY=0.27;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.988;entryY=1.028;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-62" target="6tfv7dKoM0C6FOqmf1Kl-44">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="2340" y="1624" as="sourcePoint" />
+            <mxPoint x="2770" y="1611" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-70" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-69">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-59" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-73" value="PetAdoption" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="359.5" width="530" height="450" as="geometry">
+            <mxRectangle x="330" y="250" width="110" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-74" value="- adoptionId: int&lt;div&gt;- userId: int&lt;/div&gt;&lt;div&gt;- categoryId: int&lt;/div&gt;&lt;div&gt;- subcategoryId: int&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- imageUrl: string&lt;/div&gt;&lt;div&gt;- age: int&lt;/div&gt;&lt;div&gt;- location: string&lt;/div&gt;&lt;div&gt;- reason: string&lt;/div&gt;&lt;div&gt;- health: string&lt;/div&gt;&lt;div&gt;- latestHealthCheck: date-time&lt;/div&gt;&lt;div&gt;- vaccination: string&lt;/div&gt;&lt;div&gt;- careNeeds: string&lt;/div&gt;&lt;div&gt;- dietaryNeeds: string&lt;/div&gt;&lt;div&gt;- behavior: string&lt;/div&gt;&lt;div&gt;- neutereOrSpayed: int&lt;/div&gt;&lt;div&gt;- notes: string&lt;/div&gt;&lt;div&gt;- status: int&lt;/div&gt;&lt;div&gt;- gender: int&lt;/div&gt;&lt;div&gt;- appendixUrl: string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-73">
+          <mxGeometry y="26" width="530" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-75" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-73">
+          <mxGeometry y="320" width="530" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-76" value="&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;GET&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetAdoption&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption{[FromBody] PetAdoption petAdoption}&lt;/span&gt;&lt;span class=&quot;hljs-string&quot;&gt;:&lt;/span&gt;&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;GET&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption/{id: int} &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot; class=&quot;hljs-string&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot; class=&quot;hljs-string&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PetAdoption&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption/{id:int}&lt;/span&gt;&lt;span class=&quot;hljs-string&quot;&gt;:&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PetAdoption&amp;gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;PUT&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption/{id}(&lt;/span&gt;&lt;span class=&quot;hljs-string&quot;&gt;int id, [FromBody] PetAdoption petAdoption):&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;GET&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption/ids:&lt;/span&gt;&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;int&amp;gt;&amp;gt;&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;GET&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/api/pet-adoption/ids/user-{userId}&lt;/span&gt;&lt;span class=&quot;hljs-string&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;int&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-73">
+          <mxGeometry y="328" width="530" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-77" value="PetAdoptionSearchRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2850" y="619.5" width="300" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-78" value="- adoptionId: int&lt;br&gt;- name: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt;&amp;nbsp;&lt;br&gt;- location: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- reason: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- health: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- vaccination: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- careNeeds: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- dietaryNeeds: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- behavior: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)&lt;br&gt;- notes: &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt; (nullable)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-77">
+          <mxGeometry y="26" width="300" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-79" value="PetCategory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2760" y="-270" width="480" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-80" value="-categoryId:int&lt;div&gt;-categoryName(10 languages):string&lt;/div&gt;&lt;div&gt;-description(10 languages):string&lt;/div&gt;&lt;div&gt;-imageUrl:string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-79">
+          <mxGeometry y="26" width="480" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-81" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-79">
+          <mxGeometry y="100" width="480" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-82" value="+GET /api/pet-category:Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetCategory&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;&lt;div&gt;+POST /api/pet-category {[FromBody] PetCategory petCategory}:Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+GET /api/pet-category/{id:int}:Task&amp;lt;ActionResult&amp;lt;PetCategory&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+DELETE /api/pet-category/{id:int}:Task&amp;lt;ActionResult&amp;lt;PetCategory&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+PUT /api/pet-category/{id:int}{int id, [FromBody] PetCategory petCategory}:Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+GET /api/pet-category/category-name/{id:int}-{language:string}:Task&amp;lt;ActionResult&amp;lt;PetCategory&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-79">
+          <mxGeometry y="108" width="480" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-83" value="PetSubcategory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2760" y="110" width="480" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-84" value="-subcategoryId:int&lt;div&gt;-categoryId:int&lt;/div&gt;&lt;div&gt;-subcategoryName(10 languages):string&lt;/div&gt;&lt;div&gt;-description(10 languages):string&lt;/div&gt;&lt;div&gt;-imageUrl:string&lt;/div&gt;&lt;div&gt;-origin(10 languages):string&lt;/div&gt;&lt;div&gt;-size(10 languages):string&lt;/div&gt;&lt;div&gt;-coat(10 languages):string&lt;/div&gt;&lt;div&gt;-lifespan(10 languages):string&lt;/div&gt;&lt;div&gt;-temperament(10 languages):string&lt;/div&gt;&lt;div&gt;-diet(10 languages):string&lt;/div&gt;&lt;div&gt;-latitudeAndLongitude:string&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-83">
+          <mxGeometry y="26" width="480" height="194" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-85" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-83">
+          <mxGeometry y="220" width="480" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-86" value="&lt;div&gt;+GET /api/pet-subcategory:Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetSubcategory&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+POST /api/pet-subcategory {[FromBody] PetSubcategory petSubcategory}:Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+GET /api/pet-subcategory/{id:int}:Task&amp;lt;ActionResult&amp;lt;PetSubcategory&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+DELETE /api/pet-subcategory/{id:int}:Task&amp;lt;ActionResult&amp;lt;PetSubcategory&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+PUT /api/pet-subcategory/{id:int}{int id, [FromBody] PetSubcategory petSubcategory}:Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+GET /api/pet-subcategory/subcategory-name/{id:int}-{language:string}:Task&amp;lt;ActionResult&amp;lt;PetSubcategory&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+GET /api/pet-subcategory/recommended-pet/{number}-{language:string}:Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;RecommendedPetRequest&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-83">
+          <mxGeometry y="228" width="480" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-88" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1.003;entryY=0.265;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-76">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2850" y="720" as="sourcePoint" />
+            <mxPoint x="2540" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-89" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-74">
+          <mxGeometry x="-0.0521" y="1" width="80" relative="1" as="geometry">
+            <mxPoint x="2760" y="239.9956892200455" as="sourcePoint" />
+            <mxPoint x="2439" y="240.52999999999997" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2720" y="240" />
+              <mxPoint x="2720" y="380" />
+              <mxPoint x="2720" y="533" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-90" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.003;exitY=0.233;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-82">
+          <mxGeometry x="-0.0521" y="1" width="80" relative="1" as="geometry">
+            <mxPoint x="2760" y="239.9956892200455" as="sourcePoint" />
+            <mxPoint x="2570" y="533" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2720" y="-124" />
+              <mxPoint x="2720" y="240" />
+              <mxPoint x="2720" y="380" />
+              <mxPoint x="2720" y="533" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-95" value="NewsDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="-350" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-96" value="&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- dislike_time: date&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-95">
+          <mxGeometry y="26" width="340" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-97" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-95">
+          <mxGeometry y="80" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-98" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-dislike(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsDislike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-dislike {[FromBody] NewsDislike newsDislike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-dislike/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsDislike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-dislike/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsDislike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-dislike/{newsId: int}-{userId: int} {[FromBody] NewsDislike newsDislike}:&amp;nbsp; Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-95">
+          <mxGeometry y="88" width="340" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-99" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.316;exitY=1.019;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.956;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-109" target="88wGjKEd4IUI13QPvUiT-1">
+          <mxGeometry x="0.1466" width="80" relative="1" as="geometry">
+            <mxPoint x="1579.04" y="-437.1679999999999" as="sourcePoint" />
+            <mxPoint x="1170" y="178" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-101" value="NewsFavorite" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="-355" width="340" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-102" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- favorite_time: date&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-101">
+          <mxGeometry y="26" width="340" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-103" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-101">
+          <mxGeometry y="80" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-104" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-favorite(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsFavorite&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-favorite {[FromBody] NewsFavorite newsFavorite}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-favorite/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-favorite/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-favorite/{newsId: int}-{userId: int} {[FromBody] NewsFavorite newsFavorite}:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-101">
+          <mxGeometry y="88" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-106" value="NewsLike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="-360" width="330" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-107" value="&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- like_time:&amp;nbsp; date&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-106">
+          <mxGeometry y="26" width="330" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-108" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-106">
+          <mxGeometry y="80" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-109" value="&lt;div&gt;&lt;div&gt;+ GET /api/news-like(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsLike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-like {[FromBody] NewsLike newsLike}:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ GET /api/news-like/{newsId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsLike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-like/{newsId: id}-{userId: id}: Task&amp;lt;ActionResult&amp;lt;NewsLike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-like/{newsId: int}-{userId: int} {[FromBody] NewsLike newsLike}: Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-106">
+          <mxGeometry y="88" width="330" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-111" value="NewsComment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="-1010" width="410" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-112" value="&lt;div&gt;&lt;div&gt;- comment_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- parent_comment_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- content:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;varchar(128)&lt;/div&gt;&lt;div&gt;- comment_time:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- like_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- dislike_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-111">
+          <mxGeometry y="26" width="410" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-113" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-111">
+          <mxGeometry y="150" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-114" value="&lt;div&gt;&lt;div&gt;+ GET /api/news-comment(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsComment&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment {[FromBody] NewsComment newsComment}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsComment&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-comment/{id: int}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;NewsComment&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment/{id: int} {[FromBody] NewsComment newsComment}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment/news-{id: int}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsComment&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-111">
+          <mxGeometry y="158" width="410" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-116" value="NewsCommentDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2010" y="-360" width="330" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-117" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;- comment_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- dislike_time: date&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-116">
+          <mxGeometry y="26" width="330" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-118" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-116">
+          <mxGeometry y="80" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-119" value="&lt;div&gt;&lt;div&gt;+ GET /api/news-comment-dislike(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsCommentDislike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment-dislike {[FromBody] NewsCommentDislike newsCommentDislike}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment-dislike/{commentId: int}-{userId: int}:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;NewsCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ DELETE /api/news-comment-dislike/{commentId: int}-{userId: int}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;NewsCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment-dislike/{commentId: int}-{userId: int} {[FromBody] NewsCommentDislike newsCommentDislike}: Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-116">
+          <mxGeometry y="88" width="330" height="192" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-124" value="NewsCommentLike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2360" y="-360" width="340" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-126" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-124">
+          <mxGeometry y="26" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-125" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;- comment_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- like_time:&amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-124">
+          <mxGeometry y="34" width="340" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-127" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-comment-like(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsCommentLike&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment-like {[FromBody] NewsCommentLike newsCommentLike}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment-like/{commentId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentLike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-comment-like/{commentId: int}-{userId: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentLike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment-like/{commentId: int}-{userId: int} {[FromBody] NewsCommentLike newsCommentLike}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-124">
+          <mxGeometry y="88" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-128" value="NewsCommentReport" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2770" y="-664" width="330" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-129" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;- news_comment_report_id: int&lt;/div&gt;&lt;div&gt;- reporter_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- reported_user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- reported_news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- reported_comment_id:&amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- report_reason:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(128)&lt;/div&gt;&lt;div&gt;- report_time:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- status:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;number(1)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-128">
+          <mxGeometry y="26" width="330" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-130" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-128">
+          <mxGeometry y="150" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-131" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-comment-report(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsCommentReport&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-comment-report {[FromBody] NewsCommentReport newsCommentReport}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-comment-report/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-comment-report/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-comment-report/{id: int} {[FromBody] NewsCommentReport newsCommentReport}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-128">
+          <mxGeometry y="158" width="330" height="192" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-132" value="News" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-1084" width="340" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-133" value="&lt;div&gt;&lt;div&gt;- news_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- user_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- tag_id:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- title:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(64)&lt;/div&gt;&lt;div&gt;- summary:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(128)&lt;/div&gt;&lt;div&gt;- content:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; clob&lt;/div&gt;&lt;div&gt;- creation_date:&amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- update_date:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; date&lt;/div&gt;&lt;div&gt;- cover_url:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(256)&lt;/div&gt;&lt;div&gt;- is_sticky:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; number(1)&lt;/div&gt;&lt;div&gt;- like_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- dislike_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;div&gt;- favorite_count:&amp;nbsp; &amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- comment_count:&amp;nbsp; &amp;nbsp; &amp;nbsp; int&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-132">
+          <mxGeometry y="26" width="340" height="214" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-134" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-132">
+          <mxGeometry y="240" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-135" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news(): Task&amp;lt;ActionResult&amp;lt;News&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news {[FromBody] News news}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news/{id: int}: Task&amp;lt;ActionResult&amp;lt;News&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news/{id: int}: Task&amp;lt;ActionResult&amp;lt;News&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news/{id: int} {[FromBody] News news}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news/filter-by-tag {[FromBody] List&amp;lt;int&amp;gt; tagIds}: Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;int&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news/filter-by-tag:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;object&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-132">
+          <mxGeometry y="248" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-136" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-95" target="6tfv7dKoM0C6FOqmf1Kl-135">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1560" y="-790" as="sourcePoint" />
+            <mxPoint x="1720" y="-790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="-750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-137" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-136">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-138" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.236;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.438;exitY=-0.013;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-101" target="6tfv7dKoM0C6FOqmf1Kl-135">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="980" y="-574" as="sourcePoint" />
+            <mxPoint x="1420" y="-899" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1160" y="-560" />
+              <mxPoint x="1480" y="-560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-139" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-138">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-140" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.254;exitY=0.002;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-106">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1654" y="-580" as="sourcePoint" />
+            <mxPoint x="1654" y="-663" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-141" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-140">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-142" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.997;entryY=0.969;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.003;exitY=-0.003;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-114" target="6tfv7dKoM0C6FOqmf1Kl-133">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1750" y="-561" as="sourcePoint" />
+            <mxPoint x="1674" y="-709" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-143" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-142">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-144" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.006;entryY=0.359;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.444;exitY=0.02;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-116" target="6tfv7dKoM0C6FOqmf1Kl-114">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2309" y="-853" as="sourcePoint" />
+            <mxPoint x="1759" y="-904" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2155" y="-790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-145" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-144">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-146" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.659;entryY=0.984;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-124" target="6tfv7dKoM0C6FOqmf1Kl-114">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2165" y="-574" as="sourcePoint" />
+            <mxPoint x="2418" y="-682" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-147" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-146">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-148" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=1.011;entryY=1.038;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.531;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-128" target="6tfv7dKoM0C6FOqmf1Kl-112">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2175" y="-564" as="sourcePoint" />
+            <mxPoint x="2428" y="-672" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2945" y="-855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-149" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6tfv7dKoM0C6FOqmf1Kl-148">
+          <mxGeometry x="-0.0858" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-150" value="NewsTag" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="-1030" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-151" value="&lt;div&gt;- tag_id:&amp;nbsp; &amp;nbsp;int&lt;/div&gt;&lt;div&gt;- tag:&amp;nbsp; &amp;nbsp; &amp;nbsp; varchar(16)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-150">
+          <mxGeometry y="26" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-152" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-150">
+          <mxGeometry y="60" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-153" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+ GET /api/news-tag(): Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsTag&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ POST /api/news-tag {[FromBody] NewsTag newsTag}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/news-tag/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsTag&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/news-tag/{id: int}: Task&amp;lt;ActionResult&amp;lt;NewsTag&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/news-tag/{id: int} {[FromBody] NewsTag newsTag}: Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-150">
+          <mxGeometry y="68" width="280" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-156" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.002;entryY=0.801;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-153" target="6tfv7dKoM0C6FOqmf1Kl-133">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1230" y="-1120" as="sourcePoint" />
+            <mxPoint x="1230" y="-1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-157" value="拥有" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="-910" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-159" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;0..*&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.438;exitY=1.035;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-104">
+          <mxGeometry x="-0.0521" y="1" width="80" relative="1" as="geometry">
+            <mxPoint x="1050" y="-324" as="sourcePoint" />
+            <mxPoint x="1161" y="170" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-161" value="PetCareGuide" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3390" y="359.5" width="320" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-162" value="-guideId:int&lt;div&gt;-subcategoryId:integer&lt;/div&gt;&lt;div&gt;-title(10 languages):string&lt;/div&gt;&lt;div&gt;-content(10 languages):string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-161">
+          <mxGeometry y="26" width="320" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-163" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-161">
+          <mxGeometry y="110" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-164" value="&lt;div&gt;+GET /api/pet-care-guide:Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetCareGuide&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+POST /api/pet-care-guide {[FromBody] PetCareGuide petCareGuide}:Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+GET /api/pet-care-guide/{id:int}:Task&amp;lt;ActionResult&amp;lt;PetCareGuide&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+DELETE /api/pet-care-guide/{id:int}:Task&amp;lt;ActionResult&amp;lt;PetCareGuide&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+PUT /api/pet-care-guide/{id:int}{int id, [FromBody] PetCareGuide petCareGuide}:Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-161">
+          <mxGeometry y="118" width="320" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-167" value="RecommendedPetRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3465" y="36" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-168" value="- subcategoryId: int&lt;div&gt;- subcategoryName: string&lt;/div&gt;&lt;div&gt;- description: string&lt;/div&gt;&lt;div&gt;- imageUrl: string&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-167">
+          <mxGeometry y="26" width="190" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-171" value="PetSubcategoryPageRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3415" y="690" width="270" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-172" value="- subcategoryId: int&lt;div&gt;- category: int&lt;br&gt;&lt;div&gt;- subcategoryName: string&lt;/div&gt;&lt;div&gt;- description: string&lt;br&gt;&lt;div&gt;- origin: string&lt;/div&gt;&lt;div&gt;- size: string&lt;/div&gt;&lt;div&gt;- coat: string&lt;/div&gt;&lt;div&gt;- lifespan: string&lt;/div&gt;&lt;div&gt;- temperature: string&lt;/div&gt;&lt;div&gt;- diet: string&lt;/div&gt;&lt;div&gt;- categoryName: string&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;- latitudeAndLongitude: string&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-171">
+          <mxGeometry y="26" width="270" height="214" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-175" value="PetCareGuideInfo" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3490" y="180" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-176" value="&lt;div&gt;- guideId: int&lt;/div&gt;&lt;div&gt;- subcategoryId: int&lt;/div&gt;- title: string&lt;div&gt;- content: string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-175">
+          <mxGeometry y="26" width="140" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-179" value="PetCategoryPageRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3460" y="-210" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-180" value="- categoryId: int&lt;div&gt;- categoryName: string&lt;/div&gt;&lt;div&gt;- description: string&lt;/div&gt;&lt;div&gt;- imageUrl: string&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-179">
+          <mxGeometry y="26" width="200" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-183" value="" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.004;exitY=0.458;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.595;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-176" target="6tfv7dKoM0C6FOqmf1Kl-85">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="3510" y="420" as="sourcePoint" />
+            <mxPoint x="3240" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3310" y="240" />
+              <mxPoint x="3310" y="334" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-184" value="" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.999;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-168" target="6tfv7dKoM0C6FOqmf1Kl-86">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="3250" y="180" as="sourcePoint" />
+            <mxPoint x="3290" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3310" y="99" />
+              <mxPoint x="3310" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-185" value="" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1.001;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.007;exitY=0.042;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-164" target="6tfv7dKoM0C6FOqmf1Kl-86">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="3290" y="390" as="sourcePoint" />
+            <mxPoint x="3370" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3310" y="485" />
+              <mxPoint x="3310" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-186" value="" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.999;entryY=0.589;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.005;exitY=0.378;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-172" target="6tfv7dKoM0C6FOqmf1Kl-85">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="3210" y="650" as="sourcePoint" />
+            <mxPoint x="3290" y="650" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3310" y="797" />
+              <mxPoint x="3310" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-187" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Search&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1491" y="-1370" width="990" height="186" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-188" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre; background-color: rgb(250, 250, 250); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;+ GET /api/search/pet-category/{language：string}：Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetCategorySearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;div&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;+ GET &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/search/pet-subcategory/{language：string}：&lt;/span&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetSubcategorySearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;+ GET &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; white-space: pre; background-color: rgb(250, 250, 250);&quot;&gt;/api/search/pet-care-guide/{language：string}：&lt;/span&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetCareGuideSearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;+ GET &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/search/news：&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;NewsSearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/search/post： &lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostSearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/search/post-comment：&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCommentSearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;+ GET &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(250, 250, 250); font-family: &amp;quot;Microsoft YaHei&amp;quot;; font-size: medium; white-space: pre;&quot;&gt;/api/search/pet-adoption：&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Microsoft YaHei&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PetAdoptionSearchRequest&amp;gt;&amp;gt;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-187">
+          <mxGeometry y="26" width="990" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-189" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-132" target="6tfv7dKoM0C6FOqmf1Kl-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1780" y="-850" as="sourcePoint" />
+            <mxPoint x="1940" y="-850" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1570" y="-1130" />
+              <mxPoint x="1986" y="-1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-192" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.999;exitY=0.279;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-82" target="6tfv7dKoM0C6FOqmf1Kl-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2350" y="-700" as="sourcePoint" />
+            <mxPoint x="2510" y="-700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3310" y="-117" />
+              <mxPoint x="3310" y="-1130" />
+              <mxPoint x="1986" y="-1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-195" value="" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=-0.008;exitY=0.715;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-180">
+          <mxGeometry x="0.002" width="80" relative="1" as="geometry">
+            <mxPoint x="3070" y="-50" as="sourcePoint" />
+            <mxPoint x="3240" y="-116" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-196" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3710" y="472" as="sourcePoint" />
+            <mxPoint x="1990" y="-1184" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3760" y="472" />
+              <mxPoint x="3760" y="-1130" />
+              <mxPoint x="1986" y="-1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-197" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.769;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-188" target="6tfv7dKoM0C6FOqmf1Kl-74">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2450" y="-620" as="sourcePoint" />
+            <mxPoint x="2610" y="-620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-200" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2300" y="1750" as="sourcePoint" />
+            <mxPoint x="1980" y="-1184" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2300" y="1750" />
+              <mxPoint x="2300" y="1820" />
+              <mxPoint x="3764" y="1820" />
+              <mxPoint x="3764" y="-1130" />
+              <mxPoint x="1986" y="-1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-201" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.448;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-11" target="6tfv7dKoM0C6FOqmf1Kl-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2304" y="1750" as="sourcePoint" />
+            <mxPoint x="2000" y="-1170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1478" y="1820" />
+              <mxPoint x="3768" y="1820" />
+              <mxPoint x="3768" y="-1130" />
+              <mxPoint x="1986" y="-1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-202" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1.003;exitY=-0.011;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-86" target="6tfv7dKoM0C6FOqmf1Kl-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3250" y="-107" as="sourcePoint" />
+            <mxPoint x="1996" y="-1174" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3310" y="336" />
+              <mxPoint x="3310" y="-1130" />
+              <mxPoint x="1986" y="-1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-231" value="SmsRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="-1028" width="530" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-232" value="- telephoneNumber: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="26" width="530" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-233" value="- verificationCode: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="50" width="530" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-234" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="74" width="530" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-235" value="+ POST/api/registration-verification {[FromBody] SmsRequest smsRequest}:&amp;nbsp;IActionResult" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="82" width="530" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-236" value="+ POST/api/login-verification: {[FromBody] SmsRequest smsRequest}:&amp;nbsp;IActionResult" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="108" width="530" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-237" value="+ POST/api/reset-verification: {[FromBody] SmsRequest smsRequest}:&amp;nbsp;IActionResult" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="134" width="530" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-238" value="+ POST/api/delete-verification: {[FromBody] SmsRequest smsRequest}:&amp;nbsp;IActionResult" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="160" width="530" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-239" value="+ POST/api/change-verification: {[FromBody] SmsRequest smsRequest}:&amp;nbsp;IActionResult" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-231">
+          <mxGeometry y="186" width="530" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-240" value="PasswordVerificationRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="-758" width="180" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-241" value="- userId: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-240">
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-242" value="- plainPassword: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-240">
+          <mxGeometry y="52" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-243" value="PlainPasswordRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="-758" width="180" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-244" value="- plainPassword: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-243">
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-245" value="TelephoneRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="-758" width="180" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-246" value="-telephone: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6tfv7dKoM0C6FOqmf1Kl-245">
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-247" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1.04;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-239" target="6tfv7dKoM0C6FOqmf1Kl-240">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="100" y="-818" as="sourcePoint" />
+            <mxPoint x="260" y="-818" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="175" y="-798" />
+              <mxPoint x="-50" y="-798" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-248" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6tfv7dKoM0C6FOqmf1Kl-239" target="6tfv7dKoM0C6FOqmf1Kl-243">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="100" y="-818" as="sourcePoint" />
+            <mxPoint x="260" y="-818" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tfv7dKoM0C6FOqmf1Kl-249" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1.042;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="6tfv7dKoM0C6FOqmf1Kl-245">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="175" y="-815.998" as="sourcePoint" />
+            <mxPoint x="230" y="-779.0899999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="175" y="-798" />
+              <mxPoint x="420" y="-798" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

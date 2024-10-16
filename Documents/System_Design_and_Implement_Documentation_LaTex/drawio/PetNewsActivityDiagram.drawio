@@ -1,0 +1,166 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
+    <mxGraphModel dx="1461" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="管理员" style="swimlane;whiteSpace=wrap;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="544.5" height="810" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-73" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" parent="2" vertex="1">
+          <mxGeometry x="265" y="30" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-74" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="2" source="5BDt0XJdK9_wIELOKZv6-73" target="5BDt0XJdK9_wIELOKZv6-75" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="320" as="sourcePoint" />
+            <mxPoint x="280" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-75" value="进入发布新闻界面" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="225" y="80" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-76" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="2" source="5BDt0XJdK9_wIELOKZv6-85" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="195" y="390" as="sourcePoint" />
+            <mxPoint x="280" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-77" value="" style="shape=line;html=1;strokeWidth=6;strokeColor=default;" parent="2" vertex="1">
+          <mxGeometry x="115" y="330" width="340" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-79" value="" style="endArrow=classic;html=1;rounded=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="179" y="335" as="sourcePoint" />
+            <mxPoint x="179" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-80" value="进入编辑新闻界面" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="310" y="395" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-81" value="进入管理新闻界面" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="110" y="395" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-82" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.364;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="358" y="445" as="sourcePoint" />
+            <mxPoint x="358.03999999999996" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-83" value="更改新闻标题、摘要&lt;div&gt;更改新闻标签&lt;/div&gt;&lt;div&gt;选择新闻是否置顶&lt;/div&gt;&lt;div&gt;更改新闻图片/视频&lt;/div&gt;&lt;div&gt;更改新闻内容&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="310" y="475" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-84" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="2" source="5BDt0XJdK9_wIELOKZv6-75" target="5BDt0XJdK9_wIELOKZv6-85" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="130" as="sourcePoint" />
+            <mxPoint x="280" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-85" value="输入新闻标题、&lt;span style=&quot;background-color: initial;&quot;&gt;摘要&lt;/span&gt;&lt;div&gt;选择新闻标签&lt;/div&gt;&lt;div&gt;选择新闻是否置顶&lt;/div&gt;&lt;div&gt;上传新闻图片/视频&lt;/div&gt;&lt;div&gt;输入新闻内容&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="225" y="150" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-86" value="点击发布新闻" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="225" y="260" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-87" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="2" source="5BDt0XJdK9_wIELOKZv6-85" target="5BDt0XJdK9_wIELOKZv6-86" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="535" y="300" as="sourcePoint" />
+            <mxPoint x="585" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-88" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.485;entryY=0.441;entryDx=0;entryDy=0;entryPerimeter=0;" parent="2" source="5BDt0XJdK9_wIELOKZv6-86" target="5BDt0XJdK9_wIELOKZv6-77" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="365" y="430" as="sourcePoint" />
+            <mxPoint x="280" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-89" value="点击发布新闻" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="310" y="605" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-90" value="1.根据标签筛选新闻&lt;div&gt;2.根据创建时间排序&lt;/div&gt;&lt;div&gt;3.根据更新时间排序&lt;/div&gt;&lt;div&gt;4.查看新闻封面图片&lt;/div&gt;&lt;div&gt;5.根据是否置顶筛选新闻&lt;/div&gt;&lt;div&gt;6.预览新闻&lt;/div&gt;&lt;div&gt;7.编辑新闻&lt;/div&gt;&lt;div&gt;8.删除新闻&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="110" y="475" width="110" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-91" value="" style="endArrow=classic;html=1;rounded=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="445" as="sourcePoint" />
+            <mxPoint x="180" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-92" value="" style="endArrow=classic;html=1;rounded=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="657" as="sourcePoint" />
+            <mxPoint x="180" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-93" value="" style="endArrow=classic;html=1;rounded=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="359" y="655" as="sourcePoint" />
+            <mxPoint x="359" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-94" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0.733;exitDx=0;exitDy=0;exitPerimeter=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="282" y="712.3299999999999" as="sourcePoint" />
+            <mxPoint x="282" y="735" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-95" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="2" vertex="1">
+          <mxGeometry x="267" y="736" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-96" value="" style="endArrow=classic;html=1;rounded=0;" parent="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="359" y="575" as="sourcePoint" />
+            <mxPoint x="359" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-104" value="" style="shape=line;html=1;strokeWidth=6;strokeColor=default;" parent="2" vertex="1">
+          <mxGeometry x="115" y="704" width="340" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="用户" style="swimlane;whiteSpace=wrap;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="624.5" y="80" width="285.5" height="810" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-98" value="浏览新闻界面" style="html=1;whiteSpace=wrap;" parent="3" vertex="1">
+          <mxGeometry x="87.75" y="340" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-99" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.355;entryY=0.011;entryDx=0;entryDy=0;entryPerimeter=0;" parent="3" target="5BDt0XJdK9_wIELOKZv6-101" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="126.5" y="390" as="sourcePoint" />
+            <mxPoint x="126.75" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-100" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.355;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="3" target="5BDt0XJdK9_wIELOKZv6-102" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="126.7844827586207" y="470" as="sourcePoint" />
+            <mxPoint x="126.75" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-101" value="查看新闻详情" style="html=1;whiteSpace=wrap;" parent="3" vertex="1">
+          <mxGeometry x="87.75" y="420" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-102" value="点赞/点踩/收藏新闻&lt;div&gt;发表新闻评论、&lt;/div&gt;&lt;div&gt;子评论&lt;/div&gt;&lt;div&gt;点赞/点踩/举报&lt;/div&gt;&lt;div&gt;新闻评论&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="3" vertex="1">
+          <mxGeometry x="87.75" y="500" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ZOplMe2O1YaSpbRACJbm-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.37;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="3" edge="1" source="5BDt0XJdK9_wIELOKZv6-86">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="95.5" y="260" as="sourcePoint" />
+            <mxPoint x="126.44999999999982" y="338" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-105" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="439" y="417" as="sourcePoint" />
+            <mxPoint x="439" y="477" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BDt0XJdK9_wIELOKZv6-107" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.401;exitY=1.02;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5BDt0XJdK9_wIELOKZv6-102" target="5BDt0XJdK9_wIELOKZv6-95" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="820" as="sourcePoint" />
+            <mxPoint x="840" y="770" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="756" y="831" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

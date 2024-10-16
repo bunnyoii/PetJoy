@@ -1,0 +1,128 @@
+<mxfile host="Electron" modified="2024-09-06T20:36:55.117Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="Z4uOluX300nBC532dtPd" version="22.0.2" type="device">
+  <diagram name="第 1 页" id="XWjhuGjZIDZvUrzgFzQ1">
+    <mxGraphModel dx="1656" dy="818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FcLobYDYsunlRHYjwb2t-40" value="&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;用户ID&lt;/font&gt;&lt;/u&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;用户名&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;密码&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;手机号码&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;注册日期&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;上次登录时间&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;用户角色&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;用户状态&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;头像链接&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;个人简介&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;性别&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;出生日期&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;经验点数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;关注数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;被关注数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;收&lt;/span&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;藏数&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;被收藏数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;点赞数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;被点赞数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;留言数&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="440.03" y="70" width="160" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-41" value="&lt;b&gt;&lt;font face=&quot;新宋体&quot;&gt;用户&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="440.03" y="40" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-43" value="&lt;b&gt;&lt;font face=&quot;新宋体&quot;&gt;用户设置&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="40" y="250" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-45" value="&lt;b&gt;&lt;font face=&quot;新宋体&quot;&gt;用户打卡&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-47" value="&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;打卡记录ID&lt;/font&gt;&lt;/u&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;用户ID&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;打卡时间&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="40" y="70" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-49" value="&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-family: 新宋体; background-color: initial;&quot;&gt;关注时间&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="465.03" y="510" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-50" value="&lt;b&gt;&lt;font face=&quot;新宋体&quot;&gt;用户留言&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="840" y="40" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FcLobYDYsunlRHYjwb2t-51" value="&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;留言ID&lt;/font&gt;&lt;/u&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;用户ID&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;留言者ID&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;留言内容&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;留言时间&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="840" y="70" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="84Wg8D0-4yVSgBaiV-lj-21" value="&lt;font face=&quot;新宋体&quot;&gt;打卡&lt;/font&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="259.97" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="84Wg8D0-4yVSgBaiV-lj-22" value="&lt;font face=&quot;新宋体&quot;&gt;关注&lt;/font&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="465.05999999999995" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="84Wg8D0-4yVSgBaiV-lj-23" value="&lt;font face=&quot;新宋体&quot;&gt;留言&lt;/font&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="660" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QV8q_15X7JUbRMDC0rht-3" value="&lt;font face=&quot;新宋体&quot;&gt;拥有&lt;/font&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="259.97" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QV8q_15X7JUbRMDC0rht-4" value="&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;&lt;u&gt;用户ID&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开手机号码&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开注册日期&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开个人简介&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开性别&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开出生日期&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开等级&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否&lt;/font&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;公开关注数&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-family: 新宋体; background-color: initial;&quot;&gt;是否公开被关注数&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-family: 新宋体; background-color: initial;&quot;&gt;是否公开收藏数&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-family: 新宋体; background-color: initial;&quot;&gt;是否公开被收藏数&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-family: 新宋体; background-color: initial;&quot;&gt;是否公开点赞数&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开被点赞数&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否公开留言数&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否允许他人关注&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否接受管理员通知&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; face=&quot;新宋体&quot;&gt;是否接受&lt;/font&gt;&lt;span style=&quot;border-color: var(--border-color); font-family: 新宋体; background-color: initial;&quot;&gt;用户通知&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="40" y="280" width="160" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="QV8q_15X7JUbRMDC0rht-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="FcLobYDYsunlRHYjwb2t-49" target="84Wg8D0-4yVSgBaiV-lj-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="605" y="560" as="sourcePoint" />
+            <mxPoint x="474.9999999999998" y="480" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QV8q_15X7JUbRMDC0rht-16" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="FcLobYDYsunlRHYjwb2t-51" target="84Wg8D0-4yVSgBaiV-lj-23" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="383.03" y="640" as="sourcePoint" />
+            <mxPoint x="683.03" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iSfha3qDYG1mXq8DVQv6-2" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" parent="1" source="84Wg8D0-4yVSgBaiV-lj-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="595.03" y="470" as="sourcePoint" />
+            <mxPoint x="555.03" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iSfha3qDYG1mXq8DVQv6-3" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="84Wg8D0-4yVSgBaiV-lj-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="485" y="440" as="sourcePoint" />
+            <mxPoint x="495.03" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v_ItOITo_SjjEJLg42WI-1" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" target="84Wg8D0-4yVSgBaiV-lj-23" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600.03" y="95" as="sourcePoint" />
+            <mxPoint x="670.03" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v_ItOITo_SjjEJLg42WI-3" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" target="84Wg8D0-4yVSgBaiV-lj-23" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600.03" y="125" as="sourcePoint" />
+            <mxPoint x="680.03" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-1" value="&lt;b&gt;&lt;font face=&quot;新宋体&quot;&gt;用户反馈&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="840" y="410" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-2" value="&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;&lt;u&gt;反馈意见ID&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;反馈类型&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;反馈内容&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;反馈时间&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;电子邮箱&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;新宋体&quot;&gt;手机号码&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="840" y="440" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="84Wg8D0-4yVSgBaiV-lj-21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="240" as="sourcePoint" />
+            <mxPoint x="440" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-4" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="FcLobYDYsunlRHYjwb2t-47" target="84Wg8D0-4yVSgBaiV-lj-21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="190" as="sourcePoint" />
+            <mxPoint x="320" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-5" value="&lt;font face=&quot;新宋体&quot;&gt;留言者ID&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="610" y="70" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-6" value="&lt;font face=&quot;新宋体&quot;&gt;用户ID&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="610" y="130" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-11" value="&lt;font face=&quot;新宋体&quot;&gt;被关注者ID&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="415.03" y="400" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-12" value="&lt;font face=&quot;新宋体&quot;&gt;关注者ID&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="555.03" y="400" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="QV8q_15X7JUbRMDC0rht-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="360" as="sourcePoint" />
+            <mxPoint x="440" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7c221XJhPc71LFMD7Hhc-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.192;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="QV8q_15X7JUbRMDC0rht-3" target="QV8q_15X7JUbRMDC0rht-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="430" as="sourcePoint" />
+            <mxPoint x="210" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

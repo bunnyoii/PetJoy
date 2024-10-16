@@ -1,0 +1,241 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
+    <mxGraphModel dx="3646" dy="1731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ATbfi-8eLuQjoF8er2qv-1" value="Post" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1170" y="370" width="420" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="ATbfi-8eLuQjoF8er2qv-2" value="- postId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- categoryId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- title: string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- creationDate: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- updateDate: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- isSticky: integer&lt;/div&gt;&lt;div&gt;- likeCount: integer&lt;/div&gt;&lt;div&gt;- dislikeCount: integer&lt;/div&gt;&lt;div&gt;- favoriteCount: integer&lt;/div&gt;&lt;div&gt;- commentCount: integer&amp;nbsp;&lt;/div&gt;&lt;div&gt;- imageUrl: string&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="ATbfi-8eLuQjoF8er2qv-1" vertex="1">
+          <mxGeometry y="26" width="420" height="194" as="geometry" />
+        </mxCell>
+        <mxCell id="ATbfi-8eLuQjoF8er2qv-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="ATbfi-8eLuQjoF8er2qv-1" vertex="1">
+          <mxGeometry y="220" width="420" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="ATbfi-8eLuQjoF8er2qv-4" value="+ &lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;Post&amp;gt;&amp;gt;&lt;div&gt;+ &lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;PostPost([FromBody] Post post)}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/{id}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/{id}&lt;/span&gt;&amp;nbsp;:Task&amp;lt;ActionResult&amp;lt;Post&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/{id} {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] Post post}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post/filter-by-category {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] List&amp;lt;int&amp;gt; categoryIds}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;int&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="ATbfi-8eLuQjoF8er2qv-1" vertex="1">
+          <mxGeometry y="228" width="420" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-1" value="PostCategory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="90" width="430" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-2" value="- categoryId: integer&lt;div&gt;- category: string&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-1" vertex="1">
+          <mxGeometry y="26" width="430" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-1" vertex="1">
+          <mxGeometry y="60" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-4" value="+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCategory&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostCategory postCategory}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCategory&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCategory&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-category/{id}&lt;/span&gt;&amp;nbsp;{Task&amp;lt;IActionResult&amp;gt;}:&amp;nbsp;[FromBody] PostCategory postCategory&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-1" vertex="1">
+          <mxGeometry y="68" width="430" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-5" value="PostComment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1700" y="400" width="440" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-6" value="- commentId: integer&lt;div&gt;- postId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- parentCommentId: integer (nullable)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- commentTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- likeCount: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- dislikeCount: integer&amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-5" vertex="1">
+          <mxGeometry y="26" width="440" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-5" vertex="1">
+          <mxGeometry y="160" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-8" value="+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostComment&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostComment postComment}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostComment&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostComment&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/{id} {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostComment postComment}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment/post-{id}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostComment&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-5" vertex="1">
+          <mxGeometry y="168" width="440" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-9" value="PostCommentDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2360" y="440" width="410" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-10" value="- commentId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- dislikeTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-9" vertex="1">
+          <mxGeometry y="26" width="410" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-9" vertex="1">
+          <mxGeometry y="80" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-12" value="+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike:&amp;nbsp;&lt;/span&gt;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCommentDislike&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;POST&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostCommentDislike postCommentDislike}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;GET&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike/{commentId}-{userId}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DELETE&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike/{commentId}-{userId}:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;ActionResult&amp;lt;PostCommentDislike&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;PUT&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/api/post-comment-dislike/{commentId}-{userId} {&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[FromBody] PostCommentDislike postCommentDislike}&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Task&amp;lt;IActionResult&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-9" vertex="1">
+          <mxGeometry y="88" width="410" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-13" value="PostCommentLike " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2360" y="90" width="400" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-14" value="- commentId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- likeTime: string (date-time)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-13" vertex="1">
+          <mxGeometry y="26" width="400" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-13" vertex="1">
+          <mxGeometry y="80" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-16" value="+ GET /api/post-comment-like:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentLike&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-comment-like {[FromBody] PostCommentLike postCommentLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-comment-like/{commentId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-comment-like/{commentId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-comment-like/{commentId}-{userId} {[FromBody] PostCommentLike postCommentLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-13" vertex="1">
+          <mxGeometry y="88" width="400" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-17" value="PostCommentReport   " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2360" y="810" width="410" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-18" value="- postCommentReportId: integer&lt;div&gt;- reporterId: integer&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedUserId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedPostId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedCommentId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportReason: string (maxLength: 512, minLength: 0)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- status: integer&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-17" vertex="1">
+          <mxGeometry y="26" width="410" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-17" vertex="1">
+          <mxGeometry y="150" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-20" value="+ GET /api/post-comment-report:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostCommentReport&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-comment-report {[FromBody] PostCommentReport postCommentReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-comment-report/{id} :&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-comment-report/{id}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostCommentReport&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-comment-report/{id} {[FromBody] PostCommentReport postCommentReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-17" vertex="1">
+          <mxGeometry y="158" width="410" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-21" value="PostCommentSearchRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2360" y="1210" width="410" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-22" value="- postId: integer  &lt;div&gt;- title: string (nullable)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string (nullable)&amp;nbsp; &amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-21" vertex="1">
+          <mxGeometry y="26" width="410" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-25" value="PostDislike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="780" width="430" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-26" value="- postId: integer&lt;div&gt;- userId: integer&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- dislikeTime: string (date-time)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-25" vertex="1">
+          <mxGeometry y="26" width="430" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-27" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-25" vertex="1">
+          <mxGeometry y="80" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-28" value="+ GET /api/post-dislike:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostDislike&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-dislike {[FromBody] PostDislike postDislike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-dislike/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostDislike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-dislike/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostDislike&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-dislike/{postId}-{userId} {[FromBody] PostDislike postDislike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-25" vertex="1">
+          <mxGeometry y="88" width="430" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-29" value="PostFavorite" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1160" width="440" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-30" value="- postId: integer &lt;div&gt;- userId: integer&lt;/div&gt;&lt;div&gt;- favoriteTime: string (date-time)&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-29" vertex="1">
+          <mxGeometry y="26" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-29" vertex="1">
+          <mxGeometry y="80" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-32" value="+ GET /api/post-favorite:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostFavorite&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-favorite {[FromBody] PostFavorite postFavorite}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-favorite/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-favorite/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostFavorite&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-favorite/{postId}-{userId} {[FromBody] PostFavorite postFavorite}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-29" vertex="1">
+          <mxGeometry y="88" width="440" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-33" value="PostLike" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="440" width="430" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-34" value="- postId: integer&lt;div&gt;- userId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- likeTime: string (date-time)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-33" vertex="1">
+          <mxGeometry y="26" width="430" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-35" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-33" vertex="1">
+          <mxGeometry y="80" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-36" value="+ GET /api/post-like:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostLike&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-like {[FromBody] PostLike postLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-like/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-like/{postId}-{userId}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostLike&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-like/{postId}-{userId} {[FromBody] PostLike postLike}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-33" vertex="1">
+          <mxGeometry y="88" width="430" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-38" value="PostReport" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1460" width="440" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-39" value="- postReportId: integer&lt;div&gt;- reporterId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedUserId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportedPostId: integer&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportReason: string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- reportTime: string (date-time)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- status: integer&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-38" vertex="1">
+          <mxGeometry y="26" width="440" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-40" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="kEWtBg1xrrPLDNEP-oDp-38" vertex="1">
+          <mxGeometry y="130" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-41" value="+ GET /api/post-report:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;PostReport&amp;gt;&amp;gt;&amp;gt;&lt;div&gt;+ POST /api/post-report {[FromBody] PostReport postReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ GET /api/post-report/{id}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostReport&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ DELETE /api/post-report/{id}:&amp;nbsp;Task&amp;lt;ActionResult&amp;lt;PostReport&amp;gt;&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ PUT /api/post-report/{id} {[FromBody] PostReport postReport}:&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-38" vertex="1">
+          <mxGeometry y="138" width="440" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-42" value=" PostSearchRequest" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1830" width="440" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-43" value="- postId: integer&lt;div&gt;- title: string (nullable)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- content: string (nullable)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="kEWtBg1xrrPLDNEP-oDp-42" vertex="1">
+          <mxGeometry y="26" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-51" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-2" target="ATbfi-8eLuQjoF8er2qv-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1130" y="150" as="sourcePoint" />
+            <mxPoint x="1290" y="150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1380" y="133" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-52" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-51" vertex="1" connectable="0">
+          <mxGeometry x="-0.2849" y="1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-53" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-34" target="ATbfi-8eLuQjoF8er2qv-2" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="930" y="730" as="sourcePoint" />
+            <mxPoint x="1090" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-54" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-53" vertex="1" connectable="0">
+          <mxGeometry x="-0.1044" y="2" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.513;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-26" target="ATbfi-8eLuQjoF8er2qv-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-56" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-55" vertex="1" connectable="0">
+          <mxGeometry x="-0.2399" y="2" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.515;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-30" target="ATbfi-8eLuQjoF8er2qv-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-58" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-57" vertex="1" connectable="0">
+          <mxGeometry x="-0.6109" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.515;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-39" target="ATbfi-8eLuQjoF8er2qv-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-60" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-59" vertex="1" connectable="0">
+          <mxGeometry x="-0.7198" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-6" target="ATbfi-8eLuQjoF8er2qv-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-66" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-65" vertex="1" connectable="0">
+          <mxGeometry x="0.01" y="3" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-14" target="kEWtBg1xrrPLDNEP-oDp-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-69" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-67" vertex="1" connectable="0">
+          <mxGeometry x="-0.6968" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-10" target="kEWtBg1xrrPLDNEP-oDp-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-71" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-70" vertex="1" connectable="0">
+          <mxGeometry x="-0.0134" y="5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.488;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-18" target="kEWtBg1xrrPLDNEP-oDp-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-73" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kEWtBg1xrrPLDNEP-oDp-72" vertex="1" connectable="0">
+          <mxGeometry x="-0.6247" y="-4" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-74" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.514;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="ATbfi-8eLuQjoF8er2qv-4" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1000" y="1880" as="sourcePoint" />
+            <mxPoint x="1390" y="710" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1386" y="1880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kEWtBg1xrrPLDNEP-oDp-75" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.489;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="kEWtBg1xrrPLDNEP-oDp-22" target="kEWtBg1xrrPLDNEP-oDp-8" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2250" y="1230" as="sourcePoint" />
+            <mxPoint x="1910" y="710" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1915" y="1268" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

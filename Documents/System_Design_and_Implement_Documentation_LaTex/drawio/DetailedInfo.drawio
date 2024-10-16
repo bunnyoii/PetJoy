@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="第 1 页" id="qme7T7KHqDG7MI0W2kg1">
+    <mxGraphModel dx="1004" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ITHlxJ1skdV3hWJyzpSG-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="ITHlxJ1skdV3hWJyzpSG-1" target="ITHlxJ1skdV3hWJyzpSG-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ITHlxJ1skdV3hWJyzpSG-1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;在宠物大类基础信息页面点击子类卡片&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ITHlxJ1skdV3hWJyzpSG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="ITHlxJ1skdV3hWJyzpSG-2" target="ITHlxJ1skdV3hWJyzpSG-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ITHlxJ1skdV3hWJyzpSG-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;在宠物百科主页面菜单选择子类&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ITHlxJ1skdV3hWJyzpSG-3" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;点击后跳转至子类详细信息页面&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,3141 @@
+\section{核心类设计}\label{sec:Core_Class_Design}
+
+\subsection{Main主程序类}
+
+顶级语句是指位于程序最外层作用域内的语句，不在任何函数、类或其他代码块内部。Main 方法所在的类是顶级语句的一个特例，它是程序执行的入口点。
+
+Main.cs 是 ASP.NET Core 应用程序的主入口点，是 ASP.NET Core 应用程序的核心，它负责初始化和配置整个应用程序，包括配置服务、中间件以及启动应用程序。
+
+首先，我们首先使用 ConfigurationBuilder 从 config.json 文件加载配置设置，包括数据库连接字符串和 JWT 密钥等；接着创建 Web 应用构建器实例来配置服务，并启用 CORS 策略允许所有来源的请求；为了与 Oracle 数据库进行交互，我们配置了 OracleDbContext 并从配置文件动态读取连接字符串；然后设置了 JWT 身份验证机制以确保只有持有有效 JWT 的用户能访问受保护的 API 端点；此外，还配置了 Swagger 服务生成 API 文档，便于开发人员和用户理解和使用 API；最后，构建 Web 应用实例并配置了必要的中间件，如 Swagger UI、开发者异常页面、CORS、HTTPS 重定向及授权中间件，通过调用 app.Run() 方法启动应用程序并开始监听请求。
+
+\subsection{数据库上下文}
+
+\subsubsection{概述}
+Oracle 数据库依托于OracleDbContext 进行交互，管理数据的查询、插入、更新和删除操作。OracleDbContext 是基于Entity Framework Core 实现的数据库上下文类，在应用程序与数据库之间起到连接作用，它定义了数据库模式，并通过 DbSet 属性为每个数据库表提供了访问接口。
+
+
+\subsubsection{项目背景}
+宠悦 PetJoy 后端的 DatabaseWebAPI 是一个基于 ASP.NET Core 的 Web API 项目，旨在提供数据库相关的数据服务，采用 Entity Framework Core 作为对象关系映射（ORM）工具，允许开发者以面向对象的方式操作数据库，无需直接编写 SQL 查询。这种方法提高了开发效率，减少了代码冗余和维护成本。
+
+\subsubsection{OracleDbContext 类的实现细节}
+
+\begin{itemize}
+	\item \textbf{构造函数和基础设置}：
+	
+	OracleDbContext 类继承自 DbContext，并通过构造函数接受 DbContextOptions<OracleDbContext> 参数。这样的设计允许从外部传递配置，比如连接字符串和数据库提供程序。通过这种方式，OracleDbContext 可以灵活地与不同的环境配置兼容，适应多种部署场景。
+	
+	\begin{minted}[baselinestretch=1]{csharp}
+		public class OracleDbContext(DbContextOptions<OracleDbContext> options) : DbContext(options)
+	\end{minted}
+	
+	\item \textbf{DbSet 属性}：
+	
+	每个 DbSet 属性对应数据库中的一个表，这些属性使得 OracleDbContext 可以轻松地访问和操作与这些表相关的数据。以下是 OracleDbContext 类中定义的 DbSet 属性：
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{1.5}
+		\begin{tabular}{|c|>{\raggedright\arraybackslash}p{10cm}|}
+			\hline
+			\textbf{DbSet 属性} & \textbf{描述} \\ \hline
+			DevelopmentTeamSet & 管理开发团队信息的数据表 \\ \hline
+			NewsSet & 存储新闻信息的数据表 \\ \hline
+			NewsCommentSet & 存储新闻评论的数据表 \\ \hline
+			NewsCommentDislikeSet & 存储新闻评论不喜欢的数据表 \\ \hline
+			NewsCommentLikeSet & 存储新闻评论喜欢的数据表 \\ \hline
+			NewsCommentReportSet & 存储新闻评论举报的数据表 \\ \hline
+			NewsDislikeSet & 存储新闻不喜欢的数据表 \\ \hline
+			NewsFavoriteSet & 存储新闻收藏的数据表 \\ \hline
+			NewsLikeSet & 存储新闻喜欢的数据表 \\ \hline
+			NewsTagSet & 存储新闻标签的数据表 \\ \hline
+			NotificationSet & 存储通知信息的数据表 \\ \hline
+			PetAdoptionSet & 管理宠物领养信息的数据表 \\ \hline
+			PetCareGuideSet & 存储宠物护理指南的数据表 \\ \hline
+			PetCategorySet & 存储宠物类别的数据表 \\ \hline
+			PetSubcategorySet & 存储宠物子类别的数据表 \\ \hline
+			PostSet & 存储帖子信息的数据表 \\ \hline
+			PostCategorySet & 存储帖子类别的数据表 \\ \hline
+			PostCommentSet & 存储帖子评论的数据表 \\ \hline
+			PostCommentDislikeSet & 存储帖子评论不喜欢的数据表 \\ \hline
+			PostCommentLikeSet & 存储帖子评论喜欢的数据表 \\ \hline
+			PostCommentReportSet & 存储帖子评论举报的数据表 \\ \hline
+			PostDislikeSet & 存储帖子不喜欢的数据表 \\ \hline
+			PostFavoriteSet & 存储帖子收藏的数据表 \\ \hline
+			PostLikeSet & 存储帖子喜欢的数据表 \\ \hline
+			PostReportSet & 存储帖子举报的数据表 \\ \hline
+			UserSet & 存储用户信息的数据表 \\ \hline
+			UserCheckInSet & 存储用户签到数据表 \\ \hline
+			UserFeedbackSet & 存储用户反馈的数据表 \\ \hline
+			UserFollowSet & 存储用户关注的数据表 \\ \hline
+			UserMessageSet & 存储用户消息的数据表 \\ \hline
+			UserSettingSet & 存储用户设置的数据表 \\ \hline
+		\end{tabular}
+		\caption{DbSet 属性及其描述}
+	\end{table}
+	
+	\item \textbf{OnModelCreating 方法}：
+	
+	OnModelCreating 方法主要用于配置模型的详细信息，确保模型与数据库设计规范一致。通过此方法，可以定义表的复合主键和实体之间的关系，以确保数据的完整性和一致性。
+	
+	
+	\paragraph{复合主键}复合主键用于确保数据的唯一性。以下是各表的复合主键配置：
+	\begin{minted}[baselinestretch=1]{csharp}
+	protected override void OnModelCreating(ModelBuilder modelBuilder) {
+		base.OnModelCreating(modelBuilder);
+	
+		// 配置复合主键
+		modelBuilder.Entity<NewsCommentDislike>()
+		.HasKey(n => new { n.CommentId, n.UserId });
+		modelBuilder.Entity<NewsCommentLike>()
+		.HasKey(n => new { n.CommentId, n.UserId });
+		modelBuilder.Entity<NewsDislike>()
+		.HasKey(n => new { n.NewsId, n.UserId });
+		modelBuilder.Entity<NewsFavorite>()
+		.HasKey(n => new { n.NewsId, n.UserId });
+		modelBuilder.Entity<NewsLike>()
+		.HasKey(n => new { n.NewsId, n.UserId });
+		modelBuilder.Entity<PostCommentDislike>()
+		.HasKey(n => new { n.CommentId, n.UserId });
+		modelBuilder.Entity<PostCommentLike>()
+		.HasKey(n => new { n.CommentId, n.UserId });
+		modelBuilder.Entity<PostDislike>()
+		.HasKey(n => new { n.PostId, n.UserId });
+		modelBuilder.Entity<PostFavorite>()
+		.HasKey(n => new { n.PostId, n.UserId });
+		modelBuilder.Entity<PostLike>()
+		.HasKey(n => new { n.PostId, n.UserId });
+		modelBuilder.Entity<UserFollow>()
+		.HasKey(n => new { n.UserId, n.FollowerId });
+	}
+	\end{minted}
+	
+	\paragraph{实体关系}在OracleDbContext类中，配置了多个实体之间的关系，这些关系反映了数据库中各个表之间的关联，并通过外键约束来保证数据的完整性和一致性。以下是一些关键实体关系的配置：
+	
+	\begin{itemize}
+		\item \textbf{NewsCommentReport 与 User 之间的关系}：NewsCommentReport 与 User 之间的关系被设计为一对多的形式。在这一关系中，每一个 NewsCommentReport 实体都包含两个外键，分别引用 User 实体中的举报者（ReporterId）和被举报者（ReportedUserId）。这种配置表明，一个用户可以作为多个 NewsCommentReport 的举报者或被举报者，而每个 NewsCommentReport 只能有一个对应的举报者或被举报者。
+		
+		\item \textbf{PostCommentReport 与 User 的关系}：PostCommentReport 实体通过两个外键与 User 实体建立关联，分别表示举报者和被举报者。这种关系再次体现了一对多的模式，其中一个用户可以对多个评论进行举报，也可以成为多个评论举报的目标。
+		
+		\item \textbf{Notification与 User之间的关系}：Notification与 User之间存在多对一的关系。具体来说，一个用户（User）可以接收到多个通知（Notification），即一个用户作为通知的接收者（Recipient）可以对应多条通知记录。同时，每一条通知只能对应一个接收者。换句话说，Notification 表中的每条记录都有一个指向 User 表的外键，以标识该通知的接收者。
+		
+		\item \textbf{UserFollow 与 User 之间的关系}：UserFollow 与 User 之间的关系是多对多的。UserFollow 实体用于表示用户之间的关注关系，其中一个用户可以关注多个其他用户，同时也可以被多个用户关注。这种多对多的关系通过 UserFollow 实体得以实现，确保了关注关系的灵活性和多样性。
+	\end{itemize}
+\end{itemize}
+
+\subsection{模型类}
+在 PetJoy 项目中，Models 类用于定义和管理数据库中的表结构。它们在后端开发中的主要作用包括：
+
+
+\textbf{数据模型表示}：Models 类通过定义属性和关系，映射数据库表中的结构到对象模型。这使得开发者可以使用面向对象的方式来操作数据，而无需直接编写 SQL 语句。
+
+\textbf{数据操作简化}：通过 Models 类，开发者可以利用 ORM（对象关系映射）框架简化数据的增删改查操作。ORM 框架自动处理数据持久化，减少了对数据库的直接操作。
+
+\textbf{业务逻辑集成}：Models 类不仅仅表示数据库结构，还可以包含与数据相关的业务逻辑。这样，业务逻辑和数据操作可以集中在同一个类中，提高了代码的组织性和可维护性。
+
+
+Models 类在 PetJoy 项目中作为数据库表结构与应用程序逻辑之间的桥梁，使得数据操作更加高效和直观。
+
+\subsubsection{请求模型文档}
+
+在 PetJoy 项目中，Request Models 主要用于处理从客户端发送到服务器的数据。这些模型定义了请求数据的结构，并提供了数据验证功能。具体作用如下：
+
+
+\textbf{数据结构定义}：Request Models 定义了请求数据的必需字段和数据类型，确保客户端发送的数据符合预期格式。这使得服务器能够准确地解析和处理请求。
+
+\textbf{数据验证}：通过在 Request Models 中使用数据注释（例如 \texttt{[Required]} 和 \texttt{[StringLength]}），可以验证请求数据的完整性和有效性。这有助于防止无效数据或恶意输入进入系统。
+
+\textbf{简化数据处理}：Request Models 将请求数据封装成对象，使得在控制器或服务中处理数据时更加简洁和直观。开发者可以直接使用这些模型来访问和操作请求数据，减少了手动解析和验证的复杂性。
+
+Request Models 在 PetJoy 项目中扮演了关键角色，确保客户端请求数据的正确性和安全性，并简化了数据处理过程。
+
+\subsubsection{宠物百科请求类}
+
+以下描述的请求模型类在宠物百科系统中扮演了重要的角色，分别用于不同的API请求中，以便正确地获取或传递与宠物分类、子类和护理指导相关的信息。这些模型类设计确保了数据的一致性和API调用的清晰性，有助于开发和维护项目。
+
+\paragraph{PetSubcategoryInfo}
+\subparagraph{概述：} \texttt{PetSubcategoryInfo} 类用于表示宠物百科系统中的宠物子类信息。这些信息通常包括子类的标识符、名称和图片链接。
+
+\subparagraph{属性：}
+
+\texttt{SubcategoryId} (int): 宠物子类的唯一标识符。
+
+\texttt{SubcategoryName} (string): 宠物子类的名称。
+
+\texttt{ImageUrl} (string): 宠物子类的图片链接。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递和接收宠物子类详细信息}: \texttt{PetSubcategoryDetailRequest} 类用于在请求中传递或接收特定宠物子类的详细信息。这类信息通常包括宠物子类的ID、名称、描述以及其他特征，如起源地、体型等。此请求类帮助系统获取或更新关于特定宠物子类的全面信息，以便用户能够查看详细的子类资料。例如，当用户查看某一宠物子类的详细页面时，系统会使用该请求类来加载并显示相关数据。
+	\item \textbf{在宠物分类页面中使用}: 该类通常在涉及宠物分类页面或宠物百科相关的API请求中被使用。它可以帮助系统从数据库中提取和展示与特定宠物子类相关的所有详细信息，以便用户可以了解关于宠物子类的全面资料。
+\end{itemize}
+
+\paragraph{PetCareGuideInfo}
+\subparagraph{概述：} \texttt{PetCareGuideInfo} 类代表宠物护理指导的相关信息。此类用于存储和传递与特定宠物子类相关的护理建议和指导内容。
+
+\subparagraph{属性：}
+
+\texttt{GuideId} (int): 宠物护理指导的唯一标识符。
+
+\texttt{SubcategoryId} (int): 与此护理指导相关的宠物子类的标识符。
+
+\texttt{Title} (string): 护理指导的标题。
+
+\texttt{Content} (string): 护理指导的内容。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递和接收宠物护理指导信息}: \texttt{PetCareGuideRequest} 类用于在请求中传递或接收与特定宠物子类相关的护理指导信息。此类包括子类ID、搜索标题、护理指导标题和内容，以便系统能够返回相关的护理指导信息。例如，用户可能希望查看某一宠物子类的护理建议，此请求类将帮助系统查找并返回对应的护理指导信息。
+	\item \textbf{在宠物护理指导API中使用}: 该类通常在涉及宠物护理指导的API请求中被使用，用于获取或提交与特定宠物子类相关的护理建议，以便提供给用户实用的护理信息。
+\end{itemize}
+
+\paragraph{PetCategoryPageRequest}
+\subparagraph{概述：} \texttt{PetCategoryPageRequest} 类用于请求和传递特定宠物分类页面的相关信息，包括该分类的描述和所属的子类信息。
+
+\subparagraph{属性：}
+
+\texttt{CategoryId} (int): 宠物分类的唯一标识符。
+
+\texttt{CategoryName} (string): 宠物分类的名称。
+
+\texttt{Description} (string): 宠物分类的描述。
+
+\texttt{ImageUrl} (string): 宠物分类的图片链接。
+
+\texttt{PetSubcategoryRequests} (List<\texttt{PetSubcategoryInfo}>): 与此分类相关的所有宠物子类信息。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递和接收宠物分类页面的信息}: \texttt{PetCategoryPageRequest} 类用于在请求中传递或接收特定宠物分类页面的所有相关信息。这包括分类的ID、名称、描述以及与该分类相关的宠物子类列表等。该请求类帮助系统获取或展示特定分类下的所有信息，确保用户能够看到完整的分类页面内容。
+	\item \textbf{在加载宠物百科分类页面时使用}: 该类常用于加载宠物百科中的分类页面。当用户访问宠物分类页面时，系统会使用此请求类从数据库中提取并显示与该分类相关的详细信息，以便用户了解该分类及其下的宠物子类。
+\end{itemize}
+
+\paragraph{PetSubcategoryPageRequest}
+\subparagraph{概述：} \texttt{PetSubcategoryPageRequest} 类用于请求和传递特定宠物子类页面的相关信息，包含子类的描述、起源、体型、寿命、性情、饮食习惯以及相关的护理指导。
+
+\subparagraph{属性：}
+
+\texttt{SubcategoryId} (int): 宠物子类的唯一标识符。
+
+\texttt{CategoryId} (int): 与此子类相关的宠物分类的标识符。
+
+\texttt{SubcategoryName} (string): 宠物子类的名称。
+
+\texttt{Description} (string): 宠物子类的描述。
+
+\texttt{ImageUrl} (string): 宠物子类的图片链接。
+
+\texttt{Origin} (string): 宠物子类的起源地。
+
+\texttt{Size} (string): 宠物子类的体型。
+
+\texttt{Coat} (string): 宠物子类的毛色。
+
+\texttt{Lifespan} (string): 宠物子类的预期寿命。
+
+\texttt{Temperament} (string): 宠物子类的性情。
+
+\texttt{Diet} (string): 宠物子类的饮食习惯。
+
+\texttt{CategoryName} (string): 宠物分类的名称。
+
+\texttt{LatitudeAndLongitude} (string): 宠物子类的地理位置参数（经纬度）。
+
+\texttt{PetCareGuideRequests} (List<\texttt{PetCareGuideInfo}>): 与此子类相关的所有宠物护理指导信息。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递和接收宠物子类页面的详细信息}: \texttt{PetSubcategoryPageRequest} 类用于在请求中传递或接收特定宠物子类页面的所有详细信息。这包括子类ID、名称、描述以及相关的护理指导和其他相关信息。该请求类确保系统能够展示完整的子类页面内容，以便用户可以查看详细的宠物子类信息。
+	\item \textbf{在加载宠物百科子类页面时使用}: 该类常用于加载宠物百科中的子类页面。当用户查看某一宠物子类的详细页面时，系统会使用此请求类从数据库中提取相关的子类信息，以便用户能够获取有关该宠物子类的所有必要数据。
+\end{itemize}
+
+
+\subsubsection{推荐宠物请求类}
+
+\texttt{RecommendedPetRequest} 类是推荐系统中重要的请求模型，提供了传递宠物子类信息的接口。该模型类的设计确保了推荐过程中的数据传输准确性和一致性，有助于提供个性化的宠物推荐服务。
+
+\paragraph{RecommendedPetRequest}
+\subparagraph{概述：} \texttt{RecommendedPetRequest} 类用于表示推荐宠物请求的相关信息。该类通常用于在推荐系统中请求或传递某一特定宠物子类的相关信息。
+
+\subparagraph{属性：}
+
+\texttt{SubcategoryId} (int): 宠物子类的唯一标识符。
+
+\texttt{SubcategoryName} (string): 宠物子类的名称。
+
+\texttt{Description} (string): 宠物子类的描述。
+
+\texttt{ImageUrl} (string): 宠物子类的图片链接。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{推荐系统中的宠物子类信息传递}: \texttt{PetSubcategoryRecommendationRequest} 类用于在推荐宠物的请求中传递或接收特定宠物子类的相关信息。这包括子类ID、名称、描述及其他相关特征。系统可以根据这些信息向用户推荐适合的宠物子类。
+	\item \textbf{在推荐系统中使用}: 该类常用于实现推荐系统中的宠物子类信息传递。例如，当系统根据用户的偏好推荐特定的宠物子类时，使用此请求类来传递子类的详细信息，从而为用户提供个性化的推荐结果。
+\end{itemize}
+
+
+\subsubsection{搜索请求类}
+
+下述各类搜索请求模型分别在宠物百科系统的不同模块中扮演了重要角色，用于执行不同类别的数据搜索。这些模型的设计确保了搜索功能的高效和准确，方便用户快速查找到所需信息。
+
+\paragraph{PetCategorySearchRequest}
+\subparagraph{概述：} \texttt{PetCategorySearchRequest} 类用于表示宠物分类的搜索请求。此类在需要根据分类信息进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{CategoryId} (int): 宠物分类的唯一标识符。
+
+\texttt{CategoryName} (string): 宠物分类的名称。
+
+\texttt{Description} (string): 宠物分类的描述。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递宠物分类搜索信息}: \texttt{PetCategorySearchRequest} 类用于在请求中传递与宠物分类相关的搜索信息。系统通过该请求获取用户输入的分类ID、分类名称或分类描述，以便在数据库中执行相应的搜索操作。通过这些信息，系统可以精确地检索并返回符合条件的宠物分类数据。这对于用户希望按特定分类进行浏览或筛选宠物信息时尤为重要。例如，用户输入特定的分类名称以查找所有属于该分类的宠物。
+	\item \textbf{接收宠物分类搜索结果}: 通过 \texttt{PetCategorySearchRequest} 提交的搜索请求可以接收符合条件的宠物分类列表。系统返回的数据可以包含分类的详细信息，如分类ID、名称和描述，帮助用户快速找到感兴趣的宠物分类。
+\end{itemize}
+
+\paragraph{PetSubcategorySearchRequest}
+\subparagraph{概述：} \texttt{PetSubcategorySearchRequest} 类用于表示宠物子类的搜索请求。此类在需要根据宠物子类的详细信息进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{SubcategoryId} (int): 宠物子类的唯一标识符。
+
+\texttt{SubcategoryName} (string): 宠物子类的名称。
+
+\texttt{Description} (string): 宠物子类的描述。
+
+\texttt{Origin} (string): 宠物子类的起源地。
+
+\texttt{Size} (string): 宠物子类的体型。
+
+\texttt{Coat} (string): 宠物子类的毛色。
+
+\texttt{Lifespan} (string): 宠物子类的预期寿命。
+
+\texttt{Temperament} (string): 宠物子类的性情。
+
+\texttt{Diet} (string): 宠物子类的饮食习惯。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递宠物子类搜索信息}: \texttt{PetSubcategorySearchRequest} 类用于在请求中传递与特定宠物子类相关的搜索信息。用户可以通过此请求指定宠物子类的ID、名称、描述以及其他属性（如起源地、体型等），以便系统在数据库中执行精准的查询。该请求帮助用户找到符合特定条件的宠物子类数据。
+	\item \textbf{接收宠物子类搜索结果}: 通过 \texttt{PetSubcategorySearchRequest} 提交的请求可以接收符合条件的宠物子类数据列表。返回的数据可能包括子类ID、名称、描述和其他相关属性，方便用户进一步浏览和选择。
+\end{itemize}
+
+\paragraph{PetCareGuideSearchRequest}
+\subparagraph{概述：} \texttt{PetCareGuideSearchRequest} 类用于表示宠物护理指导的搜索请求。此类在需要根据护理指导信息进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{SubcategoryId} (int): 与此护理指导相关的宠物子类的标识符。
+
+\texttt{SearchTitle} (string): 搜索时使用的标题。
+
+\texttt{Title} (string): 护理指导的标题。
+
+\texttt{Content} (string): 护理指导的内容。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递宠物护理指导搜索信息}: \texttt{PetCareGuideSearchRequest} 类用于在请求中传递与宠物护理指导相关的搜索信息。用户可以指定子类ID、搜索标题、护理指导标题及其内容，以便系统根据这些条件进行搜索。此功能帮助用户找到相关的护理指导信息，例如，用户希望根据特定标题查找有关特定宠物子类的护理建议。
+	\item \textbf{接收宠物护理指导搜索结果}: 提交的搜索请求可以接收符合条件的宠物护理指导数据列表。返回的结果可能包含相关的护理指导标题、内容和子类ID，帮助用户快速获取和阅读所需的护理信息。
+\end{itemize}
+
+\paragraph{NewsSearchRequest}
+\subparagraph{概述：} \texttt{NewsSearchRequest} 类用于表示新闻的搜索请求。此类在需要根据新闻的标题、摘要或内容进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{NewsId} (int): 新闻的唯一标识符。
+
+\texttt{Title} (string): 新闻的标题。
+
+\texttt{Summary} (string): 新闻的摘要。
+
+\texttt{Content} (string): 新闻的内容。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递新闻搜索信息}: \texttt{NewsSearchRequest} 类用于在请求中传递与特定新闻相关的搜索信息。用户可以指定新闻ID、标题、摘要或内容，以便系统根据这些条件进行搜索。此功能用于查找特定的新闻报道，例如，用户希望根据标题或内容查找新闻文章。
+	\item \textbf{接收新闻搜索结果}: 提交的搜索请求可以接收符合条件的新闻数据列表。系统返回的数据包括新闻的ID、标题、摘要和内容，帮助用户快速找到感兴趣的新闻报道。
+\end{itemize}
+
+\paragraph{PostSearchRequest}
+\subparagraph{概述：} \texttt{PostSearchRequest} 类用于表示帖子的搜索请求。此类在需要根据帖子的标题或内容进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{PostId} (int): 帖子的唯一标识符。
+
+\texttt{Title} (string): 帖子的标题。
+
+\texttt{Content} (string): 帖子的内容。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递帖子搜索信息}: \texttt{PostSearchRequest} 类用于在请求中传递与特定帖子相关的搜索信息。用户可以通过此请求指定帖子ID、标题或内容，以便系统根据这些条件进行搜索。此功能帮助用户找到特定的帖子，例如，用户可能想根据标题查找讨论某一话题的帖子。
+	\item \textbf{接收帖子搜索结果}: 提交的搜索请求可以接收符合条件的帖子数据列表。返回的结果包括帖子的ID、标题和内容，帮助用户快速定位并阅读相关帖子。
+\end{itemize}
+
+\paragraph{PostCommentSearchRequest}
+\subparagraph{概述：} \texttt{PostCommentSearchRequest} 类用于表示帖子评论的搜索请求。此类在需要根据评论的内容进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{PostId} (int): 相关帖子的唯一标识符。
+
+\texttt{Title} (string): 帖子的标题。
+
+\texttt{Content} (string): 评论的内容。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递帖子评论搜索信息}: \texttt{PostCommentSearchRequest} 类用于在请求中传递与特定帖子的评论相关的搜索信息。用户可以指定帖子ID、标题或评论内容，以便系统查找与该帖子相关的评论。此功能帮助用户找到与特定帖子相关的讨论或反馈，例如，用户希望查看某个帖子的所有评论。
+	\item \textbf{接收帖子评论搜索结果}: 提交的搜索请求可以接收符合条件的帖子评论数据列表。系统返回的结果包括评论内容、相关帖子的ID和标题，帮助用户快速查看和分析与帖子相关的评论信息。
+\end{itemize}
+
+\paragraph{PetAdoptionSearchRequest}
+\subparagraph{概述：} \texttt{PetAdoptionSearchRequest} 类用于表示宠物领养的搜索请求。此类在需要根据宠物领养信息进行搜索时使用。
+
+\subparagraph{属性：}
+
+\texttt{AdoptionId} (int): 宠物领养的唯一标识符。
+
+\texttt{Name} (string, 可选): 宠物的名称。
+
+\texttt{Location} (string): 领养宠物的地址。
+
+\texttt{Reason} (string): 转让宠物的原因。
+
+\texttt{Health} (string): 宠物的健康情况。
+
+\texttt{Vaccination} (string): 宠物的疫苗接种情况。
+
+\texttt{CareNeeds} (string, 可选): 宠物的特殊护理需求。
+
+\texttt{DietaryNeeds} (string, 可选): 宠物的特殊饮食需求。
+
+\texttt{Behavior} (string, 可选): 宠物的性格行为特征。
+
+\texttt{Notes} (string, 可选): 其他备注。
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{传递宠物领养搜索信息}: \texttt{PetAdoptionSearchRequest} 类用于在请求中传递与宠物领养相关的搜索信息。用户可以指定领养ID、宠物名称、地址、转让原因、健康状况等，以便系统根据这些条件进行搜索。此功能用于帮助用户找到符合特定要求的领养宠物，例如，用户希望找到某个地点的健康状况良好的宠物。
+	\item \textbf{接收宠物领养搜索结果}: 提交的搜索请求可以接收符合条件的宠物领养数据列表。系统返回的数据包括宠物的名称、健康情况、疫苗接种情况等详细信息，帮助用户快速找到适合领养的宠物。
+\end{itemize}
+
+\subsubsection{短信验证码请求类}
+
+\texttt{SmsRequest} 类用于在宠物百科系统中表示短信验证码的请求。该类在涉及用户身份验证、密码重置等场景下起到了至关重要的作用。
+
+\paragraph{SmsRequest}
+\subparagraph{概述：} \texttt{SmsRequest} 类用于表示发送或验证短信验证码的请求。此类通常用于用户注册、登录验证或其他需要手机号码验证的操作中。
+
+\subparagraph{属性}:\
+
+\texttt{TelephoneNumber} (string): 用户的手机号码。该字段用于接收或验证短信验证码。
+
+\texttt{VerificationCode} (string): 用户收到的短信验证码。该字段用于验证用户输入的验证码是否正确。
+
+\subparagraph{用例}:
+\begin{itemize}
+	\item \textbf{用户注册}: 当新用户注册时，系统会发送一条包含验证码的短信到用户的手机上。用户需要在注册页面输入这条验证码以完成注册流程。此时，\texttt{SmsRequest} 类用于发送请求并验证验证码的正确性。
+	\item \textbf{密码重置}: 当用户忘记密码时，系统会要求用户输入与其账号关联的手机号码，然后发送一条验证码。用户输入收到的验证码后，系统将允许用户重置密码。此场景中，\texttt{SmsRequest} 类用于接收用户输入的手机号码并发送验证码请求，同时验证用户提交的验证码。
+	\item \textbf{登录验证}: 在启用了双重验证的情况下，用户登录时需要输入其收到的验证码。系统将使用 \texttt{SmsRequest} 类来处理验证码的发送和验证，以确保用户的身份安全。
+	\item \textbf{更改绑定手机号码}: 当用户需要更改账号绑定的手机号码时，系统会向新号码发送一条验证码。用户需输入此验证码以完成号码更改流程。此时，\texttt{SmsRequest} 类用于发送验证码并验证用户输入的正确性。
+\end{itemize}
+
+\subsubsection{用户表请求类}
+
+\texttt{UserRequest} 类集合了多种与用户信息相关的请求类型。这些请求类型用于处理用户在宠物百科系统中的多种交互场景，如身份验证、个人信息更新、登录时间记录等。
+
+\paragraph{PasswordVerificationRequest}
+\subparagraph{概述：} \texttt{PasswordVerificationRequest} 类用于处理用户密码的验证请求。通常用于登录验证或执行需要身份验证的操作时。
+
+\subparagraph{属性：}
+
+\texttt{UserId} (int): 用户的唯一标识符，用于识别和验证特定用户的身份。
+
+\texttt{PlainPassword} (string): 用户的明文密码，用于验证用户身份。
+
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{登录验证}: 用户在登录时提交其明文密码，系统使用该类来验证密码的正确性。如果验证成功，用户将被授予访问权限。
+	\item \textbf{敏感操作验证}: 当用户尝试执行敏感操作（如更改密码或删除账号）时，系统要求再次验证其密码。此时，\texttt{PasswordVerificationRequest} 类用于重新验证用户的身份。
+\end{itemize}
+
+\paragraph{PersonalInformationRequest}
+\subparagraph{概述：} \texttt{PersonalInformationRequest} 类用于处理用户个人信息的请求，包括用户的个人简介、性别和出生日期。
+
+\subparagraph{属性：}
+
+\texttt{Profile} (string, 可选): 用户的个人简介，用于展示用户的个性化信息。
+
+\texttt{Gender} (int): 用户的性别标识符，通常用作个性化推荐或展示。
+
+\texttt{Birthdate} (DateTime): 用户的出生日期，可用于年龄相关的功能（如内容过滤）。
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{个人资料更新}: 用户希望更新其个人资料时，使用该类来提交新的信息，如更改个人简介或更新出生日期。
+	\item \textbf{内容个性化}: 根据用户的性别和年龄信息，系统可以使用此类提供的数据来个性化推荐内容或服务。
+\end{itemize}
+
+\paragraph{AvatarUrlRequest}
+\subparagraph{概述：} \texttt{AvatarUrlRequest} 类用于处理用户头像链接的请求，允许用户上传或更新其个人头像。
+
+\subparagraph{属性：}
+
+\texttt{AvatarUrl} (string, 可选): 用户头像的URL，用于展示在用户的个人资料页面上。
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{头像上传}: 用户上传新头像后，使用 \texttt{AvatarUrlRequest} 类提交头像URL，系统更新用户资料中显示的头像。
+	\item \textbf{头像更改}: 用户希望更改其个人头像时，通过 \texttt{AvatarUrlRequest} 类提交新头像的URL以替换旧头像。
+\end{itemize}
+
+\paragraph{LastLoginTimeRequest}
+\subparagraph{概述：}\texttt{LastLoginTimeRequest} 类用于记录用户的上次登录时间，通常用于监控用户活动或统计分析。
+
+\subparagraph{属性：}
+
+\texttt{LastLoginTime} (DateTime): 用户的上次登录时间戳，表示用户最后一次访问系统的时间。
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{用户活动监控}: 系统记录用户的上次登录时间，以便分析用户的活跃度或发送提醒通知。
+	\item \textbf{安全审计}: 在安全审计或异常检测中，\texttt{LastLoginTimeRequest} 类用于记录和检查用户的登录活动，识别异常登录行为。
+\end{itemize}
+
+\paragraph{PlainPasswordRequest}
+\subparagraph{概述：} \texttt{PlainPasswordRequest} 类用于处理明文密码的请求，通常用于密码更新或用户身份验证的场景。
+
+\subparagraph{属性：}
+
+\texttt{PlainPassword} (string): 用户的新明文密码，用于更新或验证用户密码。
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{密码更新}: 用户希望更新其账号密码时，通过 \texttt{PlainPasswordRequest} 类提交新密码以替换旧密码。
+	\item \textbf{身份验证}: 在执行某些敏感操作时，系统可能要求用户重新输入密码进行验证，使用此类来处理明文密码的传递和验证。
+\end{itemize}
+
+\paragraph{TelephoneRequest}
+\subparagraph{概述：} \texttt{TelephoneRequest} 类用于处理用户的手机号码请求，通常用于账号注册、号码更新或双重验证的场景。
+
+\subparagraph{属性：}
+
+\texttt{Telephone} (string): 用户的手机号码，用于联系或验证用户身份。
+
+\subparagraph{用例：}
+\begin{itemize}
+	\item \textbf{注册验证}: 用户在注册新账号时，提交手机号码以接收验证码，系统使用 \texttt{TelephoneRequest} 类来处理该请求。
+	\item \textbf{号码更新}: 用户希望更改其账号绑定的手机号码时，通过 \texttt{TelephoneRequest} 类提交新号码，系统更新绑定信息。
+\end{itemize}
+
+\subsubsection{数据库表映射}
+
+在 PetJoy 项目中，Tables Models 代表了数据库中的实际表结构。具体作用包括：
+
+\textbf{表结构映射}：Tables Models 类直接映射到数据库中的表。在 ORM 框架中，如 Entity Framework，这些模型类定义了数据库表的结构，包括每个列及其数据类型。
+
+\textbf{简化数据库操作}：通过 Tables Models，开发者可以以更直观的方式进行数据库操作。ORM 框架自动处理 SQL 查询的生成和执行，使得数据操作更为简化和高效。
+
+\textbf{关系定义}：Tables Models 定义了表与表之间的关系，例如一对多、多对多关系等。这些关系通过模型中的导航属性实现，使得数据关联操作更为方便。
+
+\textbf{数据一致性}：通过定义模型类的属性和关系，Tables Models 有助于确保数据库数据的一致性和完整性。在进行数据插入、更新和删除操作时，ORM 框架会自动处理相关的约束和验证。
+
+
+总结来说，Tables Models 在 PetJoy 项目中作为数据库表结构的映射，使得数据操作更加直观、简化，并确保了数据的完整性和一致性。
+
+为了更好地理解这些概念，我们将以一个典型的表（News 表）为例来讨论模型类的三个主要部分：
+
+\subsubsection{模型类的作用}
+
+在后端开发中，\texttt{News} 模型类表示数据库中的 \texttt{NEWS} 表结构。它定义了新闻实体的各种属性（如新闻 ID、标题、内容等），以及它们之间的关系。通过使用 \texttt{News} 模型类，开发者可以使用面向对象的方式操作数据库，简化数据操作和维护，避免直接使用 SQL 语句来进行数据库交互。在后端开发中，News 模型类用于表示数据库中的 NEWS 表结构。这个模型类不仅定义了新闻实体的各种属性，如新闻 ID、标题、内容、封面图片链接、点赞数、评论数等，还描述了这些属性与数据库表字段之间的映射关系。通过使用 News 模型类，开发者能够以面向对象的方式处理数据库中的新闻数据，而不必直接编写复杂的 SQL 查询语句。
+
+具体来说，News 模型类提供了一种更加直观和易于维护的数据操作方式。它使得开发者可以通过操作类的属性来执行 CRUD（创建、读取、更新、删除）操作，进而简化了数据操作的复杂性。此外，News 模型类还帮助保持代码的高内聚性和低耦合性，使得数据模型与数据库的具体实现细节相隔离。
+
+模型类的设计支持数据库的自动映射和更新，使得开发者可以专注于业务逻辑的实现，而将数据持久化和数据库交互的复杂性交由 ORM（对象关系映射）框架处理。这种设计方式不仅提高了开发效率，还减少了因直接操作数据库而可能引发的错误和漏洞。
+
+\subsubsection{属性定义}
+
+属性定义是 \texttt{News} 模型类的核心部分，用于定义数据库表 \texttt{NEWS} 中的每个列。每个属性代表表中的一个列，并使用适当的数据类型来匹配数据库字段的类型。属性的定义不仅包括其数据类型，还涉及到各种数据注释，以确保属性与数据库字段的正确映射和约束条件。
+
+在 \texttt{News} 模型类中，属性通过使用数据注释（如 \texttt{Key}、\texttt{Required}、\texttt{Column} 等）来指定其约束条件和映射信息。例如，\texttt{NewsId} 属性被标记为主键（\texttt{[Key]}）并自动生成（\texttt{[DatabaseGenerated(DatabaseGeneratedOption.Identity)]}），这意味着它在数据库中作为唯一标识符，并且每次插入新记录时会自动递增。 \texttt{UserId} 和 \texttt{TagId} 属性被定义为必需（\texttt{[Required]}），并通过外键约束（\texttt{[ForeignKey]}）与其他表相关联。其他属性如 \texttt{Title} 和 \texttt{Summary} 则通过 \texttt{Column} 注释指定了对应的列名，并设置了相关约束条件，如最大长度（\texttt{StringLength}）和是否必需（\texttt{Required}）。
+
+通过这种方式，模型类不仅明确了数据库表的结构，还确保了数据的完整性和一致性。这种定义方式使得数据库表的设计能够以更加可读和维护的形式展现，从而简化了数据操作和管理。
+
+\begin{minted}[baselinestretch=1]{csharp}
+	// 属性定义
+	[Key]
+	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	[Column("NEWS_ID")]
+	[SwaggerSchema("新闻ID")]
+	public int NewsId { get; set; }
+	
+	[Required]
+	[ForeignKey("User")]
+	[Column("USER_ID")]
+	[SwaggerSchema("管理员ID")]
+	public int UserId { get; set; }
+	
+	[Required]
+	[ForeignKey("NewsTag")]
+	[Column("TAG_ID")]
+	[SwaggerSchema("新闻标签ID")]
+	public int TagId { get; set; }
+	
+	[Required]
+	[Column("TITLE")]
+	[StringLength(256)]
+	[SwaggerSchema("标题")]
+	public string Title { get; set; } = string.Empty;
+	
+	// 其他属性省略...
+\end{minted}
+
+在上述代码中，我们可以看到 News 模型类如何定义和配置数据库表 NEWS 的结构。首先，NewsId 属性被定义为 NEWS\_ID 列，并指定为主键（[Key]），且通过 DatabaseGeneratedOption.Identity 注解表示该字段的值由数据库自动生成。这意味着，每当插入一条新记录时，数据库将自动为 NewsId 分配一个唯一的值，从而确保每条新闻记录都有一个唯一的标识符。
+
+接下来，UserId 和 TagId 属性分别用于指定外键，这些外键用于建立与其他表的关系。UserId 属性通过 ForeignKey("User") 注解与 User 表相关联，而 TagId 属性通过 ForeignKey("NewsTag") 注解与 NewsTag 表相关联。这些外键的定义确保了 News 表中的每条记录都可以与特定的 User 和 NewsTag 记录相关联，从而实现了数据的完整性和一致性。
+
+此外，其他属性如 Title、Summary 和 Content 通过 Column 注解指定了相应的列名，并设置了额外的约束。例如，Title 属性被指定为 TITLE 列，并通过 StringLength(256) 限制其最大长度为 256 个字符。类似地，Summary 属性被定义为 SUMMARY 列，最大长度为 512 个字符。这些设置不仅明确了数据库列的名称，还确保了数据的有效性，避免了过长的字符串存储在数据库中。
+
+总体而言，这些代码片段展示了如何将数据库表的设计转换为 C\# 代码中的模型类定义。通过属性定义、外键配置以及列约束的设置，模型类不仅描述了数据结构，还确保了数据库操作的一致性和完整性。
+
+\subsubsection{导航属性}
+
+导航属性在模型类中用于定义数据库表之间的关系，允许对象关系映射（ORM）框架自动处理关联数据的加载和导航。这些属性使得我们能够以面向对象的方式访问和操作相关联的数据，而无需编写复杂的 SQL 查询来手动获取数据。
+
+在 \texttt{News} 模型类中，导航属性用于定义与其他表之间的关系，包括一对多关系和多对多关系。具体而言，\texttt{News} 模型类的导航属性包括以下几个方面：
+
+\begin{itemize}
+	\item \textbf{与 \texttt{User} 表的关系}：\texttt{News} 表通过外键 \texttt{UserId} 与 \texttt{User} 表建立了一对多关系。这个关系通过 \texttt{User} 属性来表示，它允许我们访问与每条新闻相关联的用户信息。
+	
+	\item \textbf{与 \texttt{NewsTag} 表的关系}：类似地，\texttt{News} 表通过外键 \texttt{TagId} 与 \texttt{NewsTag} 表建立了一对多关系。这个关系通过 \texttt{NewsTag} 属性来表示，使得我们能够访问每条新闻对应的标签信息。
+	
+	\item \textbf{与 \texttt{NewsComment} 表的关系}：\texttt{News} 模型类的 \texttt{NewsCommentEntity} 属性定义了与 \texttt{NewsComment} 表的一对多关系。这个集合属性表示每条新闻可以有多个评论，提供了一种访问和管理新闻评论的方式。
+	
+	\item \textbf{与 \texttt{NewsLike}、\texttt{NewsDislike}、\texttt{NewsFavorite} 和 \texttt{Notification} 表的关系}：\texttt{News} 模型类还定义了与 \texttt{NewsLike}、\texttt{NewsDislike}、\texttt{NewsFavorite} 和 \texttt{Notification} 表的一对多关系。这些集合属性允许我们访问与每条新闻相关的喜欢、踩、不喜欢、收藏以及通知记录等信息。
+\end{itemize}
+
+这些导航属性不仅提供了数据访问的便捷途径，还促进了数据模型的逻辑组织和关联管理。ORM 框架利用这些属性能够自动加载和维护相关数据，从而简化了数据操作和查询的复杂性。这种方式有助于减少手动编写 SQL 查询的需求，同时提升了数据操作的效率和一致性。
+
+\begin{minted}[baselinestretch=1]{csharp}
+	// 导航属性
+	public ICollection<NewsComment> NewsCommentEntity { get; set; } =
+	new HashSet<NewsComment>();
+	
+	public ICollection<NewsCommentReport> NewsCommentReportEntity { get; set; } =
+	new HashSet<NewsCommentReport>();
+	
+	public ICollection<NewsDislike> NewsDislikeEntity { get; set; } =
+	new HashSet<NewsDislike>();
+	
+	public ICollection<NewsFavorite> NewsFavoriteEntity { get; set; } =
+	new HashSet<NewsFavorite>();
+	
+	public ICollection<NewsLike> NewsLikeEntity { get; set; } =
+	new HashSet<NewsLike>();
+	
+	public ICollection<Notification> NotificationEntity { get; set; } =
+	new HashSet<Notification>();
+\end{minted}
+
+在这些导航属性中，每个 \texttt{ICollection} 属性代表一个与其他表的关联关系。例如，\texttt{NewsCommentEntity} 表示与 \texttt{NewsComment} 表的关系，使得我们可以通过 \texttt{News} 对象直接访问其所有相关评论。
+
+\subsubsection{关系定义}
+
+关系定义部分用于设定 \texttt{News} 表与其他表之间的关系，包括一对多或多对多关系。关系定义是通过数据注释（如 \texttt{[ForeignKey]}）或流畅的 API（Fluent API）来实现的，以确保数据库中的数据一致性和完整性。
+
+在 \texttt{News} 模型类中，关系定义涉及以下几个方面：
+
+
+\textbf{主键定义}：\texttt{NewsId} 属性通过 \texttt{[Key]} 数据注释标记为主键。主键唯一标识每条记录，并通过 \texttt{[DatabaseGenerated(DatabaseGeneratedOption.Identity)]} 注释指示该主键值由数据库自动生成。这样可以确保每条新闻记录在数据库中的唯一性。
+
+\textbf{外键定义}：\texttt{News} 模型类中的 \texttt{UserId} 和 \texttt{TagId} 属性通过 \texttt{[ForeignKey]} 注释指定为外键，分别关联到 \texttt{User} 和 \texttt{NewsTag} 表。外键约束确保 \texttt{News} 表中的记录必须在对应的 \texttt{User} 和 \texttt{NewsTag} 表中存在，从而维护数据的参照完整性。
+
+\textbf{一对多关系定义}：\texttt{News} 表与其他表（如 \texttt{NewsComment}、\texttt{NewsLike}、\texttt{NewsDislike}、\texttt{NewsFavorite} 和 \texttt{Notification}）之间的关系是通过导航属性来表示的一对多关系。这些导航属性定义了一个 \texttt{News} 实体可以关联到多个 \texttt{NewsComment}、\texttt{NewsLike} 等记录。虽然这些关系在代码中没有直接使用 \texttt{[ForeignKey]} 注释定义，但它们的存在依赖于模型类中相应的外键属性。
+
+\textbf{流畅 API（Fluent API）配置}：除了使用数据注释外，还可以通过流畅 API 来进一步配置关系。流畅 API 提供了更多的灵活性和控制，允许开发者在 \texttt{DbContext} 的 \texttt{OnModelCreating} 方法中详细定义主键、外键以及关系的具体约束。
+
+
+通过关系定义，开发者可以准确地描述数据模型之间的逻辑关联，并确保数据库操作的正确性。这些定义帮助 ORM 框架理解数据之间的关系，并在数据操作时自动处理关联数据的加载和维护，从而提升了开发效率和数据一致性。
+
+\begin{minted}[baselinestretch=1]{csharp}
+	// 关系定义
+	[Required]
+	[ForeignKey("User")]
+	[Column("USER_ID")]
+	[SwaggerSchema("管理员ID")]
+	public int UserId { get; set; }
+	
+	[Required]
+	[ForeignKey("NewsTag")]
+	[Column("TAG_ID")]
+	[SwaggerSchema("新闻标签ID")]
+	public int TagId { get; set; }
+	
+	public User? User { get; set; }
+	public NewsTag? NewsTag { get; set; }
+\end{minted}
+
+在此部分中，\texttt{UserId} 和 \texttt{TagId} 属性通过 \texttt{[ForeignKey]} 注释指定为外键，分别指向 \texttt{User} 和 \texttt{NewsTag} 表。同时，\texttt{User} 和 \texttt{NewsTag} 是导航属性，表示 \texttt{News} 表与 \texttt{User} 和 \texttt{NewsTag} 表之间的一对多关系。
+
+\subsection{控制器类}
+
+\subsubsection{返回结果说明}
+
+\begin{itemize}
+	\item \textbf{200 OK}：请求成功，服务器已经成功处理了请求。
+	\item \textbf{201 Created}：请求已经被成功处理，并且服务器已经创建了新的资源。
+	\item \textbf{400 Bad Request}：请求无效，通常由客户端错误引起。
+	\item \textbf{404 Not Found}：请求的资源不存在。
+	\item \textbf{500 Internal Server Error}：服务器遇到了意外错误。
+\end{itemize}
+
+\subsubsection{登录鉴权控制器}
+
+\paragraph{功能作用}
+
+AuthController 是一个用于处理用户登录鉴权的控制器类，该控制器负责验证用户凭据，并在验证成功后生成并返回一个 JSON Web Token (JWT)，以便用户在后续的请求中使用此令牌进行身份验证。此控制器基于 Microsoft.AspNetCore.Mvc 框架，并使用 Oracle 数据库上下文来检索用户信息。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetJwtToken([FromBody] PasswordVerificationRequest passwordVerificationRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/get-jwt-token
+	\item \textbf{功能}：接收用户的登录凭据，验证其身份，并生成一个 JWT 令牌。
+\end{itemize}
+
+\paragraph{关键函数逻辑}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetJwtToken([FromBody] PasswordVerificationRequest passwordVerificationRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{参数}：passwordVerificationRequest：包含用户 ID 和明文密码的请求对象。
+	\item \textbf{逻辑}：\newline
+	1. 检查 passwordVerificationRequest 中的 UserId 和 PlainPassword 是否为空或无效。如果无效，返回 400 BadRequest。 \newline
+	2. 使用 UserId 在数据库中查找对应的用户。如果用户不存在，返回 401 Unauthorized。 \newline
+	3. 将用户输入的明文密码哈希化，并与数据库中存储的哈希密码进行比较。如果不匹配，返回 401 Unauthorized。 \newline
+	4. 如果密码验证成功，调用 JwtTokenUtils.GenerateJwtToken(user) 生成 JWT 令牌，并返回 200 OK 响应，包含生成的令牌。
+\end{itemize}
+
+\subsubsection{短信验证码控制器}
+
+\paragraph{功能作用}
+
+MessageController 是一个用于处理短信验证码发送的控制器类，该控制器通过集成阿里云短信服务 API，提供多个接口以发送不同类型的验证码，如注册、登录、重置、注销和修改验证码。此控制器使用了 Microsoft.AspNetCore.Mvc 框架，并采用阿里云的 Dysmsapi 客户端进行短信发送操作。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	SendRegistrationVerification([FromBody] SmsRequest smsRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/get-jwt-token
+	\item \textbf{功能}：发送注册短信验证码。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	SendLoginVerification([FromBody] SmsRequest smsRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/login-verification
+	\item \textbf{功能}：发送登录短信验证码。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	SendResetVerification([FromBody] SmsRequest smsRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/reset-verification
+	\item \textbf{功能}：发送重置短信验证码。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	SendDeleteVerification([FromBody] SmsRequest smsRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/delete-verification
+	\item \textbf{功能}：发送注销短信验证码。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	SendChangeVerification([FromBody] SmsRequest smsRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/change-verification
+	\item \textbf{功能}：发送修改短信验证码。
+\end{itemize}
+
+\paragraph{关键函数逻辑}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	CreateClient()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{功能}：创建并配置阿里云短信服务客户端实例。
+	\item \textbf{逻辑}：使用提供的 AccessKeyId、AccessKeySecret 和 Endpoint 配置阿里云 Dysmsapi 客户端，确保所有短信发送请求都通过该客户端执行。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	SendRegistrationVerification([FromBody] SmsRequest smsRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{参数}：smsRequest：包含手机号和验证码的请求对象。
+	\item \textbf{逻辑}：\newline
+	1. 创建阿里云短信服务客户端。 \newline
+	2. 配置短信发送请求的模板、手机号、签名等参数。 \newline
+	3. 通过客户端发送短信验证码，并捕获可能的异常。 \newline
+	4. 根据短信发送结果返回相应的 HTTP 响应。
+\end{itemize}
+
+\subsubsection{开发团队表控制器}
+
+\paragraph{功能作用}
+
+DevelopmentTeamController 是一个用于管理开发团队数据的控制器类，该控制器允许用户通过 RESTful API 对开发团队表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理开发团队表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetDevelopmentTeam()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/development-team
+	\item \textbf{功能}：获取开发团队表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetDevelopmentTeamByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/development-team/{id：int}
+	\item \textbf{功能}：根据主键（ID）获取开发团队表中的某条记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteDevelopmentTeamByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/development-team/{id：int}
+	\item \textbf{功能}：根据主键（ID）删除开发团队表中的某条记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostDevelopmentTeam([FromBody] DevelopmentTeam developmentTeam)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/development-team
+	\item \textbf{功能}：向开发团队表添加新的数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateDevelopmentTeam(int id, [FromBody] DevelopmentTeam developmentTeam)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/development-team/{id：int}
+	\item \textbf{功能}：根据主键（ID）更新开发团队表中的某条记录。
+\end{itemize}
+
+\subsubsection{新闻评论控制器}
+
+\paragraph{功能作用}
+
+NewsCommentController 是一个用于管理新闻评论数据的控制器类，该控制器提供了一套完整的 API 用于管理与新闻评论相关的数据操作，包括增、删、改、查功能。通过与 OracleDbContext 的集成，该控制器能够有效地处理新闻评论表的相关请求，并确保数据的一致性和完整性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsComment()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment
+	\item \textbf{功能}：获取新闻评论表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment/{id：int}
+	\item \textbf{功能}：根据主键（ID）获取新闻评论表中的某条记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	/api/news-comment/news-{id：int}
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment/{id：int}
+	\item \textbf{功能}：根据新闻 ID（NEWS\_ID）获取该新闻的所有评论。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsCommentByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-comment/{id：int}
+	\item \textbf{功能}：根据主键（ID）删除新闻评论表中的某条记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsComment([FromBody] NewsComment newsComment)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-comment
+	\item \textbf{功能}：向新闻评论表中添加新的评论数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsComment(int id, [FromBody] NewsComment newsComment)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-comment/{id：int}
+	\item \textbf{功能}：根据主键（ID）更新新闻评论表中的某条记录。
+\end{itemize}
+
+\subsubsection{新闻评论点踩表控制器}
+
+\paragraph{功能作用}
+
+NewsCommentDislikeController 是一个用于管理新闻评论点踩数据的控制器类，该控制器提供了一套完整的 API，用于处理与新闻评论点踩表相关的数据操作，包括数据的增、删、改、查功能。通过与 OracleDbContext 的集成，NewsCommentDislikeController 能够高效地处理新闻评论点踩表的相关请求，确保数据的一致性、完整性，并且在操作中结合了异常处理机制，以保证系统的稳定性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentDislike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-dislike
+	\item \textbf{功能}：获取新闻评论点踩表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）获取新闻评论点踩表的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）删除新闻评论点踩表的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsCommentDislike([FromBody] NewsCommentDislike newsCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-comment-dislike
+	\item \textbf{功能}：向新闻评论点踩表添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsCommentDislike(int commentId, int userId, [FromBody] NewsCommentDislike newsCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）更新新闻评论点踩表的记录。
+\end{itemize}
+
+\subsubsection{新闻评论点赞表控制器}
+
+\paragraph{功能作用}
+
+NewsCommentLikeController 是用于管理新闻评论点赞表数据的控制器类，主要。通过 RESTful API，用户可以执行对新闻评论点赞表的增、删、改、查操作。该控制器利用 Entity Framework Core (EF Core) 和 OracleDbContext 来与数据库进行交互，确保高效处理与新闻评论点赞相关的请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentLike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-like
+	\item \textbf{功能}：获取新闻评论点赞表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentLikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-like/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）获取新闻评论点赞表的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsCommentLikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-comment-like/{commentId}-{userId}
+	\item \textbf{功能}：根根据主键（评论 ID 和用户 ID）删除新闻评论点赞表的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsCommentLike([FromBody] NewsCommentLike newsCommentLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-comment-like
+	\item \textbf{功能}：向新闻评论点赞表添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsCommentLike(int commentId, int userId, [FromBody] NewsCommentLike newsCommentLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-comment-like/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）更新新闻评论点赞表的记录。
+\end{itemize}
+
+\subsubsection{新闻评论点踩表控制器}
+
+\paragraph{功能作用}
+
+NewsCommentDislikeController 是一个用于管理新闻评论点踩数据的控制器类，该控制器提供了一套完整的 API，用于处理与新闻评论点踩表相关的数据操作，包括数据的增、删、改、查功能。通过与 OracleDbContext 的集成，NewsCommentDislikeController 能够高效地处理新闻评论点踩表的相关请求，确保数据的一致性、完整性，并且在操作中结合了异常处理机制，以保证系统的稳定性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentDislike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-dislike
+	\item \textbf{功能}：获取新闻评论点踩表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）获取新闻评论点踩表的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）删除新闻评论点踩表的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsCommentDislike([FromBody] NewsCommentDislike newsCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-comment-dislike
+	\item \textbf{功能}：向新闻评论点踩表添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsCommentDislike(int commentId, int userId, [FromBody] NewsCommentDislike newsCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（评论 ID 和用户 ID）更新新闻评论点踩表的记录。
+\end{itemize}
+
+\subsubsection{新闻评论举报表控制器}
+
+\paragraph{功能作用}
+
+NewsCommentReportController 是用于管理新闻评论举报表数据的控制器类。该控制器通过 RESTful API 提供对新闻评论举报表的增、删、改、查操作。利用 Entity Framework Core (EF Core) 和 OracleDbContext，该控制器能够高效处理与新闻评论举报相关的数据库请求，确保数据的可靠性和完整性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentReport()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-report
+	\item \textbf{功能}：获取新闻评论举报表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsCommentReportByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-comment-report/{id}
+	\item \textbf{功能}：根据主键（ID）获取新闻评论举报表的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsCommentReportByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-comment-report/{id}
+	\item \textbf{功能}：根据主键（ID）删除新闻评论举报表的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsCommentReport([FromBody] NewsCommentReport newsCommentReport)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-comment-report
+	\item \textbf{功能}：向新闻评论举报表添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsCommentReport(int id, [FromBody] NewsCommentReport newsCommentReport)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-comment-report/{id}
+	\item \textbf{功能}：根据主键（ID）更新新闻评论举报表的记录。
+\end{itemize}
+
+\subsubsection{新闻表控制器}
+
+\paragraph{功能作用}
+
+NewsController 是用于管理新闻表数据操作的控制器类。该控制器提供了一系列的 RESTful API，用于执行对新闻表的基本操作，如创建、读取、更新和删除（CRUD）。通过集成 OracleDbContext 和使用 Entity Framework Core (EF Core)，该控制器确保了对新闻数据的高效管理，并处理所有相关的数据库事务和错误。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNews()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news
+	\item \textbf{功能}：获取新闻表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news/{id}
+	\item \textbf{功能}：根据主键（ID）获取新闻表的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news/{id}
+	\item \textbf{功能}：根据主键（ID）删除新闻表的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNews([FromBody] News news)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news
+	\item \textbf{功能}：向新闻表添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNews(int id, [FromBody] News news)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news/{id}
+	\item \textbf{功能}：根据主键（ID）更新新闻表的记录。
+\end{itemize}
+
+\subsubsection{新闻点踩表控制器}
+
+\paragraph{功能作用}
+
+NewsDislikeController 是用于管理新闻点踩表的数据操作的控制器类。该控制器提供了一系列的 RESTful API，用于执行对新闻点踩表的基本操作，如创建、读取、更新和删除（CRUD）。通过集成 OracleDbContext 和使用 Entity Framework Core (EF Core)，该控制器确保了对新闻点踩数据的高效管理，并处理所有相关的数据库事务和错误。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsDislike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-dislike
+	\item \textbf{功能}：获取新闻点踩表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsDislikeByPk(int newsId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-dislike/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）获取新闻点踩表的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsDislikeByPk(int newsId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-dislike/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）删除新闻点踩表的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsDislike([FromBody] NewsDislike newsDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-dislike
+	\item \textbf{功能}：向新闻点踩表添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsDislike(int newsId, int userId, [FromBody] NewsDislike newsDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-dislike/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）更新新闻点踩表的记录。
+\end{itemize}
+
+\subsubsection{新闻收藏表控制器}
+
+\paragraph{功能作用}
+
+NewsFavoriteController 是用于管理新闻收藏表相关操作的控制器类。该控制器通过一系列 RESTful API 方法来处理新闻收藏数据的增删查改操作。控制器使用 OracleDbContext 与数据库进行交互，并通过 Entity Framework Core (EF Core) 进行数据管理。此外，控制器还处理与数据库操作相关的异常情况，以确保应用程序的稳定性和健壮性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsFavorite()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-favorite
+	\item \textbf{功能}：获取新闻收藏表中的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsFavoriteByPk(int newsId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-favorite/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）获取新闻收藏表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsFavoriteByPk(int newsId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-favorite/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）删除新闻收藏表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsFavorite([FromBody] NewsFavorite newsFavorite)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-favorite
+	\item \textbf{功能}：向新闻收藏表中添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsFavorite(int newsId, int userId, [FromBody] NewsFavorite newsFavorite)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-favorite/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）更新新闻收藏表中的记录。
+\end{itemize}
+
+\subsubsection{新闻点赞表控制器}
+
+\paragraph{功能作用}
+
+NewsLikeController 是用于管理新闻点赞表相关操作的控制器类。通过 RESTful API 方法，NewsLikeController 处理新闻点赞数据的增删查改操作。该控制器使用 OracleDbContext 连接数据库，并通过 Entity Framework Core (EF Core) 进行数据管理。控制器还包含对数据库操作的错误处理，以确保应用程序的稳定性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsLike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-like
+	\item \textbf{功能}：获取新闻点赞表中的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsLikeByPk(int newsId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-like/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）获取新闻点赞表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsLikeByPk(int newsId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-like/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）删除新闻点赞表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsLike([FromBody] NewsLike newsLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-like
+	\item \textbf{功能}：向新闻点赞表中添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsLike(int newsId, int userId, [FromBody] NewsLike newsLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-like/{newsId}-{userId}
+	\item \textbf{功能}：根据主键（新闻ID和用户ID）更新新闻点赞表中的记录。
+\end{itemize}
+
+\subsubsection{新闻标签表控制器}
+
+\paragraph{功能作用}
+
+NewsTagController 是用于管理新闻标签表操作的控制器类。该控制器提供了多个 RESTful API，用于处理新闻标签的数据查询、添加、更新和删除操作。通过与 OracleDbContext 集成，该控制器利用 Entity Framework Core (EF Core) 来执行数据库操作，并包含全面的错误处理机制，确保 API 的可靠性和稳定性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsTag()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-tag
+	\item \textbf{功能}：获取新闻标签表中的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsTagByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/news-tag/{id}
+	\item \textbf{功能}：根据主键（ID）获取新闻标签表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNewsTagByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/news-tag/{id}
+	\item \textbf{功能}：根据主键（ID）删除新闻标签表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNewsTag([FromBody] NewsTag newsTag)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/news-tag
+	\item \textbf{功能}：向新闻标签表中添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNewsTag(int id, [FromBody] NewsTag newsTag)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/news-tag/{id}
+	\item \textbf{功能}：根据主键（ID）更新新闻标签表中的记录。
+\end{itemize}
+
+\subsubsection{通知表控制器}
+
+\paragraph{功能作用}
+
+NotificationController 是用于管理通知表操作的控制器类。该控制器提供了一系列的 RESTful API，用于处理通知数据的查询、添加、更新和删除操作。它通过与 OracleDbContext 交互，使用 Entity Framework Core (EF Core) 进行数据库操作，并且包含详细的错误处理机制，以确保 API 的稳定性和可靠性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNotification()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/notification
+	\item \textbf{功能}：获取通知表中的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNotificationByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/notification/{id}
+	\item \textbf{功能}：根据主键（ID）获取通知表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteNotificationByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/notification/{id}
+	\item \textbf{功能}：根据主键（ID）删除通知表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostNotification([FromBody] Notification notification)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/notification
+	\item \textbf{功能}：向通知表中添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateNotification(int id, [FromBody] Notification notification)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/notification/{id}
+	\item \textbf{功能}：根据主键（ID）更新通知表中的记录。
+\end{itemize}
+
+\subsubsection{宠物领养表控制器}
+
+\paragraph{功能作用}
+
+PetAdoptionController 是负责管理宠物领养表操作的控制器类。该控制器提供了多种 RESTful API，用于处理与宠物领养相关的数据查询、添加、更新和删除操作。通过 OracleDbContext 与数据库交互，并使用 Entity Framework Core (EF Core) 进行数据操作，确保数据的准确性和一致性。控制器内包含了详细的异常处理机制，以应对各种潜在的数据库或服务器错误。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetAdoption()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-adoption
+	\item \textbf{功能}：获取宠物领养表中的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetAdoptionByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-adoption/{id}
+	\item \textbf{功能}：根据主键（ID）获取宠物领养表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePetAdoptionByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/pet-adoption/{id}
+	\item \textbf{功能}：根据主键（ID）删除宠物领养表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPetAdoption([FromBody] PetAdoption petAdoption)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/pet-adoption
+	\item \textbf{功能}：向宠物领养表中添加新数据项（系统自动生成 ADOPTION\_ID）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePetAdoption(int id, [FromBody] PetAdoption petAdoption)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/pet-adoption/{id}
+	\item \textbf{功能}：根据主键（ID）更新宠物领养表中的记录。
+\end{itemize}
+
+\subsubsection{宠物护理指导表控制器}
+
+\paragraph{功能作用}
+
+PetCareGuideController 是用于管理宠物护理指导表操作的控制器类。该控制器提供了多个 RESTful API 接口，用于执行数据的增、删、查、改操作。通过与 OracleDbContext 数据库上下文的交互，PetCareGuideController 实现了对宠物护理指导表的 CRUD（创建、读取、更新、删除）操作。该控制器还包含了详尽的异常处理机制，确保在数据库操作或服务器遇到错误时，能够向用户提供有意义的错误信息。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCareGuide()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-care-guide
+	\item \textbf{功能}：获取宠物护理指导表中的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCareGuideByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-care-guide/{id}
+	\item \textbf{功能}：根据主键（ID）获取宠物护理指导表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePetCareGuideByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/pet-care-guide/{id}
+	\item \textbf{功能}：根据主键（ID）删除宠物护理指导表中的指定记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPetCareGuide([FromBody] PetCareGuide petCareGuide)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/pet-care-guide
+	\item \textbf{功能}：向宠物护理指导表中添加新数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePetCareGuide(int id, [FromBody] PetCareGuide petCareGuide)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/pet-care-guide/{id}
+	\item \textbf{功能}：根据主键（ID）更新宠物护理指导表中的记录。
+\end{itemize}
+
+\subsubsection{宠物分类表控制器}
+
+\paragraph{功能作用}
+
+PetCategoryController 是一个用于管理宠物分类数据的控制器类。该控制器允许用户通过 RESTful API 对宠物分类表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理宠物分类表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCategory()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-category
+	\item \textbf{功能}：获取宠物分类表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCategoryByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-category/{id}
+	\item \textbf{功能}：根据主键（ID）获取宠物分类表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCategoryNameByPkAndLanguage(int id, string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-category/category-name/{id}-{language}
+	\item \textbf{功能}：根据主键（ID）和语言（Language）获取宠物分类表的宠物分类名称数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePetCategoryByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/pet-category/{id}
+	\item \textbf{功能}：根据主键（ID）删除宠物分类表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPetCategory(PetCategory petCategory)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/pet-category
+	\item \textbf{功能}：向宠物分类表添加数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePetCategory(int id, PetCategory petCategory)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/pet-category/{id}
+	\item \textbf{功能}：根据主键（ID）更新宠物分类表的数据。
+\end{itemize}
+
+\paragraph{关键函数逻辑}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCategoryNameByPkAndLanguage(int id, string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{功能}：根据主键（ID）和语言获取宠物分类表的宠物分类名称数据。
+	\item \textbf{逻辑}：通过使用 EF.Property<string>(p, FieldNameUtils.GetCategoryNameFieldName(language))，根据语言动态获取宠物分类名称字段。该函数首先通过主键过滤记录，然后根据指定的语言返回宠物分类名称。如果记录存在，则返回 200 OK；否则返回 404 Not Found。如果出现内部服务器错误，则返回 500 Internal Server Error。这一功能特别适合多语言支持的场景，允许根据用户选择的语言返回适当的分类名称。
+\end{itemize}
+
+\subsubsection{宠物子类表控制器}
+
+\paragraph{功能作用}
+
+PetSubcategoryController 是用于管理宠物子类表数据的控制器类。该控制器提供了增、删、改、查功能，允许通过 RESTful API 对宠物子类表的数据进行操作。该控制器集成了 Entity Framework Core (EF Core) 与 OracleDbContext，用于处理与数据库的交互。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetSubcategory()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-subcategory
+	\item \textbf{功能}：获取宠物子类表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetSubcategoryByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-subcategory/{id}
+	\item \textbf{功能}：根据主键（ID）获取宠物子类表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetSubcategoryNameByPkAndLanguage(int id, string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-subcategory/subcategory-name/{id}-{language}
+	\item \textbf{功能}：根据主键（ID）和语言（Language）获取宠物子类表的宠物子类名称数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetRecommendedPetByNumberAndLanguage(int number, string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-subcategory/recommended-pet/{number}-{language}
+	\item \textbf{功能}：根据数量（Number）和语言（Language）获取推荐宠物的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePetSubcategoryByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/pet-subcategory/{id}
+	\item \textbf{功能}：根据主键（ID）删除宠物子类表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPetSubcategory(PetSubcategory petSubcategory)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/pet-subcategory
+	\item \textbf{功能}：向宠物子类表添加数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePetSubcategory(int id, PetSubcategory petSubcategory)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/pet-subcategory/{id}
+	\item \textbf{功能}：根据主键（ID）更新宠物子类表的数据。
+\end{itemize}
+
+\subsubsection{帖子分类表控制器}
+
+\paragraph{功能作用}
+
+PostCategoryController 是一个用于管理帖子分类数据的控制器类。该控制器允许用户通过 RESTful API 对帖子分类表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理帖子分类表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCategory()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-category
+	\item \textbf{功能}：获取帖子分类表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCategoryByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-category/{id}
+	\item \textbf{功能}：根据主键（ID）获取帖子分类表的具体数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostCategoryByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-category/{id}
+	\item \textbf{功能}：根据主键（ID）删除帖子分类表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostCategory(PostCategory postCategory)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-category
+	\item \textbf{功能}：向帖子分类表添加新记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostCategory(int id, PostCategory postCategory)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-category/{id}
+	\item \textbf{功能}：根据主键（ID）更新帖子分类表中的记录。
+\end{itemize}
+
+\subsubsection{帖子评论表控制器}
+
+\paragraph{功能作用}
+
+PostCommentController 是一个用于管理帖子评论数据的控制器类。该控制器允许用户通过 RESTful API 对帖子评论表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理与帖子评论表相关的请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostComment()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment
+	\item \textbf{功能}：获取帖子评论表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment/{id}
+	\item \textbf{功能}：根据主键（ID）获取帖子评论表的具体数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentByPostId(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment/post-{id}
+	\item \textbf{功能}：根据帖子 ID（POST\_ID）获取帖子评论表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostCommentByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-comment/{id}
+	\item \textbf{功能}：根据主键（ID）删除帖子评论表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostComment(PostComment postComment)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-comment
+	\item \textbf{功能}：向帖子评论表添加新记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostComment(int id, PostComment postComment)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-comment/{id}
+	\item \textbf{功能}：根据主键（ID）更新帖子评论表中的记录。
+\end{itemize}
+
+\subsubsection{帖子评论点踩表控制器}
+
+\paragraph{功能作用}
+
+PostCommentDislikeController 是一个用于管理帖子评论点踩表数据的控制器类。该控制器允许用户通过 RESTful API 对帖子评论点踩表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理帖子评论点踩表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentDislike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-dislike
+	\item \textbf{功能}：获取帖子评论点踩表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）获取帖子评论点踩表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）删除帖子评论点踩表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostCommentDislike(PostCommentDislike postCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-comment-dislike
+	\item \textbf{功能}：向帖子评论点踩表添加新数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostCommentDislike(int commentId, int userId, PostCommentDislike postCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）更新帖子评论点踩表中的记录。
+\end{itemize}
+
+\subsubsection{帖子评论点赞表控制器}
+
+\paragraph{功能作用}
+
+PostCommentLikeController 是一个用于管理帖子评论点赞表数据的控制器类。该控制器允许用户通过 RESTful API 对帖子评论点赞表数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentLike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-like
+	\item \textbf{功能}：获取帖子评论点赞表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentLikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-like/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）获取帖子评论点赞表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostCommentLikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-comment-like/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）删除帖子评论点赞表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostCommentLike(PostCommentLike postCommentLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-comment-like
+	\item \textbf{功能}：向帖子评论点赞表添加新数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostCommentLike(int commentId, int userId, PostCommentLike postCommentLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-comment-like/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）更新帖子评论点赞表中的记录。
+\end{itemize}
+
+\subsubsection{帖子评论点踩表控制器}
+
+\paragraph{功能作用}
+
+PostCommentDislikeController 是一个用于管理帖子评论点踩表数据的控制器类。该控制器允许用户通过 RESTful API 对帖子评论点踩表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理帖子评论点踩表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentDislike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-dislike
+	\item \textbf{功能}：获取帖子评论点踩表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）获取帖子评论点踩表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostCommentDislikeByPk(int commentId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）删除帖子评论点踩表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostCommentDislike(PostCommentDislike postCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-comment-dislike
+	\item \textbf{功能}：向帖子评论点踩表添加新数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostCommentDislike(int commentId, int userId, PostCommentDislike postCommentDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-comment-dislike/{commentId}-{userId}
+	\item \textbf{功能}：根据主键（ID）更新帖子评论点踩表中的记录。
+\end{itemize}
+
+\subsubsection{帖子评论举报表控制器}
+
+\paragraph{功能作用}
+
+PostCommentReportController 是一个用于管理帖子评论举报表数据的控制器类。该控制器允许用户通过 RESTful API 对帖子评论举报表数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentReport()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-report
+	\item \textbf{功能}：获取帖子评论举报表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentReportByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-comment-report/{id}
+	\item \textbf{功能}：根据主键（ID）获取帖子评论举报表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostCommentReportByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-comment-report/{id}
+	\item \textbf{功能}：根据主键（ID）删除帖子评论举报表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostCommentReport(PostCommentReport postCommentReport)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-comment-report
+	\item \textbf{功能}：向帖子评论举报表添加新数据（不需要提供 POST\_COMMENT\_REPORT\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostCommentReport(int id, PostCommentReport postCommentReport)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-comment-report/{id}
+	\item \textbf{功能}：根据主键（ID）更新帖子评论举报表中的记录。
+\end{itemize}
+
+\subsubsection{帖子表控制器}
+
+\paragraph{功能作用}
+
+PostController 是一个用于管理帖子表数据的控制器类。该控制器允许用户通过RESTful API对帖子表数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPost()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post
+	\item \textbf{功能}：获取帖子表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post/{id}
+	\item \textbf{功能}：根据主键（ID）获取帖子表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post/{id}
+	\item \textbf{功能}：根据主键（ID）删除帖子表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPost(Post post)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post
+	\item \textbf{功能}：向帖子表添加新数据（不需要提供 POST\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePost(int id, Post post)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post/{id}
+	\item \textbf{功能}：根据主键（ID）更新帖子表中的记录。
+\end{itemize}
+
+\subsubsection{帖子点踩表控制器}
+
+\paragraph{功能作用}
+
+PostDislikeController 是一个用于管理帖子点踩表数据的控制器类。该控制器允许用户通过RESTful API对帖子点踩表数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostDislike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-dislike
+	\item \textbf{功能}：获取帖子点踩表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostDislikeByPk(int postId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-dislike/{postId}-{userId}
+	\item \textbf{功能}：根据主键（Post ID 和 User ID）获取帖子点踩表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostDislikeByPk(int postId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-dislike/{postId}-{userId}
+	\item \textbf{功能}：根据主键（Post ID 和 User ID）删除帖子点踩表中的记录。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostDislike(PostDislike postDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-dislike
+	\item \textbf{功能}：向帖子点踩表添加新数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostDislike(int postId, int userId, PostDislike postDislike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-dislike/{postId}-{userId}
+	\item \textbf{功能}：根据主键（Post ID 和 User ID）更新帖子点踩表中的记录。
+\end{itemize}
+
+\subsubsection{帖子收藏表控制器}
+
+\paragraph{功能作用}
+
+PostFavoriteController 是负责管理 PostFavorite 表数据操作的控制器类。该控制器允许用户通过 RESTful API 对 PostFavorite 表进行增删改查操作。通过集成 Entity Framework Core（EF Core）与 OracleDbContext，控制器能够有效地与数据库交互，处理与 PostFavorite 表相关的请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostFavorite()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-favorite
+	\item \textbf{功能}：获取帖子收藏表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostFavoriteByPk(int postId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-favorite/{postId}-{userId}
+	\item \textbf{功能}：根据主键（ID）获取帖子收藏表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostFavoriteByPk(int postId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-favorite/{postId}-{userId}
+	\item \textbf{功能}：根据主键（ID）删除帖子收藏表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostFavorite(PostFavorite postFavorite)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-favorite
+	\item \textbf{功能}：向帖子收藏表添加数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostFavorite(int postId, int userId, PostFavorite postFavorite)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-favorite/{postId}-{userId}
+	\item \textbf{功能}：根据主键（ID）更新帖子收藏表的数据。
+\end{itemize}
+
+\subsubsection{帖子点赞表控制器}
+
+\paragraph{功能作用}
+
+PostLikeController 是一个用于管理帖子点赞数据的控制器类。该控制器提供了对帖子点赞表数据的增、删、改、查操作，通过 RESTful API 实现与数据库的交互，确保帖子点赞数据的处理。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostLike()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-like
+	\item \textbf{功能}：获取帖子点赞表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostLikeByPk(int postId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-like/{postId}-{userId}
+	\item \textbf{功能}：根据主键（ID）获取特定的帖子点赞数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostLikeByPk(int postId, int userId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-like/{postId}-{userId}
+	\item \textbf{功能}：根据主键（ID）删除特定的帖子点赞数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostLike([FromBody] PostLike postLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-like
+	\item \textbf{功能}：向帖子点赞表添加数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostLike(int postId, int userId, [FromBody] PostLike postLike)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-like/{postId}-{userId}
+	\item \textbf{功能}：根据主键（ID）更新特定的帖子点赞数据。
+\end{itemize}
+
+\subsubsection{帖子举报表控制器}
+
+\paragraph{功能作用}
+
+PostReportController 是一个用于管理帖子举报数据的控制器类。该控制器允许用户通过 RESTful API 对帖子举报表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理帖子举报表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostReport()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-report
+	\item \textbf{功能}：获取帖子举报表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostReportByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/post-report/{id}
+	\item \textbf{功能}：根据主键（ID）获取特定的帖子举报数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeletePostReportByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/post-report/{id}
+	\item \textbf{功能}：根据主键（ID）删除特定的帖子举报数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostPostReport([FromBody] PostReport postReport)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/post-report
+	\item \textbf{功能}：向帖子举报表添加数据项（不需要提供 POST\_REPORT\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePostReport(int id, [FromBody] PostReport postReport)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/post-report/{id}
+	\item \textbf{功能}：根据主键（ID）更新特定的帖子举报数据。
+\end{itemize}
+
+\subsubsection{用户打卡表控制器}
+
+\paragraph{功能作用}
+
+UserCheckInController 是一个用于管理用户打卡数据的控制器类。该控制器允许用户通过 RESTful API 对用户打卡表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理用户打卡表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserCheckIn()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-check-in
+	\item \textbf{功能}：获取用户打卡表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserCheckInByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-check-in/{id}
+	\item \textbf{功能}：根据主键（ID）获取特定的用户打卡数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteUserCheckInByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/user-check-in/{id}
+	\item \textbf{功能}：根据主键（ID）删除特定的用户打卡数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostUserCheckIn([FromBody] UserCheckIn userCheckIn)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user-check-in
+	\item \textbf{功能}：向用户打卡表添加数据项（不需要提供 CHECK\_IN\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateUserCheckIn(int id, [FromBody] UserCheckIn userCheckIn)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user-check-in/{id}
+	\item \textbf{功能}：根据主键（ID）更新特定的用户打卡数据。
+\end{itemize}
+
+\subsubsection{用户表控制器}
+
+\paragraph{功能作用}
+
+UserController 是一个用于管理用户表数据的控制器类。该控制器允许用户通过 RESTful API 对用户表中的数据进行增、删、改、查操作。通过集成 Entity Framework Core (EF Core) 与 OracleDbContext，该控制器能够有效地与数据库进行交互，处理用户表的相关请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUser()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user
+	\item \textbf{功能}：获取用户表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserNameByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/user-name/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户表的用户名数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserTelephoneByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/telephone/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户表的手机号码数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserAvatarUrlByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/avatar-url/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户表的头像链接数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserRoleByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/role/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户表的用户角色数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteUserByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/user/{id}
+	\item \textbf{功能}：根据主键（ID）删除用户表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostUser(User user)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user
+	\item \textbf{功能}：向用户表添加数据项（不需要提供 USER\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateUser(int id, User user)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user/{id}
+	\item \textbf{功能}：根据主键（ID）更新用户表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePersonalInformation(int id, PersonalInformationRequest personalInformationRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user/personal-information/{id}
+	\item \textbf{功能}：根据主键（ID）更新用户表的个人信息数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateAvatarUrl(int id, AvatarUrlRequest avatarUrlRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user/avatar-url/{id：int}
+	\item \textbf{功能}：根据主键（ID）更新用户表的头像链接数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateLastLoginTime(int id, LastLoginTimeRequest lastLoginTimeRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user/last-login-time/{id：int}
+	\item \textbf{功能}：根据主键（ID）更新用户表的上次登录时间数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdatePassword(int id, PlainPasswordRequest plainPasswordRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user/password/{id：int}
+	\item \textbf{功能}：向根据主键（ID）更新用户表的密码数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateTelephone(int id, TelephoneRequest telephoneRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user/telephone/{id：int}
+	\item \textbf{功能}：根据主键（ID）更新用户表的手机号码数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	CheckUserNameUnique(string userName)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/check-username-unique/{username}
+	\item \textbf{功能}：判断用户名是否存在于用户表中。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	CheckTelephoneUnique(string telephone)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/check-telephone-unique/{telephone}
+	\item \textbf{功能}：判断手机号码是否存在于用户表中。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	VerifyPassword(PasswordVerificationRequest passwordVerificationRequest)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user/verify-password
+	\item \textbf{功能}：验证用户密码是否正确。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserIdByTelephone(string telephone)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user/get-user-id-by-telephone/{telephone}
+	\item \textbf{功能}：根据电话号码获取用户 ID。
+\end{itemize}
+
+\subsubsection{用户反馈表控制器}
+
+\paragraph{功能作用}
+
+UserFeedbackController 是一个用于管理用户反馈数据的控制器类。该控制器提供了对用户反馈表的增、删、改、查操作，通过 RESTful API 实现对用户反馈数据的访问和修改。该控制器集成了 Entity Framework Core (EF Core) 和 OracleDbContext，使得与数据库的交互变得高效而可靠。通过此控制器，用户可以获取所有反馈、根据主键查询反馈、删除反馈、添加新反馈及更新现有反馈。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserFeedback()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-feedback
+	\item \textbf{功能}：获取用户反馈表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserFeedbackByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-feedback/{id：int}
+	\item \textbf{功能}：根据主键（ID）获取用户反馈表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteUserFeedbackByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/user-feedback/{id：int}
+	\item \textbf{功能}：根据主键（ID）删除用户反馈表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostUserFeedback(UserFeedback userFeedback)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user-feedback
+	\item \textbf{功能}：向用户反馈表添加数据项（不需要提供 FEEDBACK\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateUserFeedback(int id, UserFeedback userFeedback)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user-feedback/{id：int}
+	\item \textbf{功能}：根据主键（ID）更新用户反馈表的数据。
+\end{itemize}
+
+\subsubsection{用户关注表控制器}
+
+\paragraph{功能作用}
+
+UserFollowController 是一个用于管理用户关注数据的控制器类。该控制器提供了对用户关注表的增、删、改、查操作，通过 RESTful API 实现对用户关注数据的访问和修改。通过集成 Entity Framework Core (EF Core) 和 OracleDbContext，该控制器能够高效地与数据库进行交互，处理用户关注表相关的请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserFollow()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-follow
+	\item \textbf{功能}：获取用户关注表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserFollowByPk(int userId, int followerId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-follow/{userId}-{followerId}
+	\item \textbf{功能}：根据主键（用户 ID 和关注者 ID）获取用户关注表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteUserFollowByPk(int userId, int followerId)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/user-follow/{userId}-{followerId}
+	\item \textbf{功能}：根据主键（用户 ID 和关注者 ID）删除用户关注表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostUserFollow(UserFollow userFollow)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user-follow
+	\item \textbf{功能}：向用户关注表添加数据项。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateUserFollow(int userId, int followerId, UserFollow userFollow)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user-follow/{userId}-{followerId}
+	\item \textbf{功能}：根据主键（用户 ID 和关注者 ID）更新用户关注表的数据。
+\end{itemize}
+
+\subsubsection{用户留言表控制器}
+
+\paragraph{功能作用}
+
+UserMessageController 是一个用于管理用户留言数据的控制器类。该控制器提供了对用户留言表的增、删、改、查操作，通过 RESTful API 实现对用户留言数据的访问和修改。通过集成 Entity Framework Core (EF Core) 和 OracleDbContext，该控制器能够高效地与数据库进行交互，处理用户留言表相关的请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserMessage()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-message
+	\item \textbf{功能}：获取用户留言表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserMessageByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-message/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户留言表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteUserMessageByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/user-message/{id}
+	\item \textbf{功能}：根据主键（ID）删除用户留言表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostUserMessage(UserMessage userMessage)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user-message
+	\item \textbf{功能}：向用户留言表添加数据项（不需要提供 MESSAGE\_ID，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateUserMessage(int id, UserMessage userMessage)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user-message/{id}
+	\item \textbf{功能}：根据主键（ID）更新用户留言表的数据。
+\end{itemize}
+
+\subsubsection{用户设置表控制器}
+
+\paragraph{功能作用}
+
+UserSettingController 是一个用于管理用户设置表数据的控制器类。该控制器提供了对用户设置表的增、删、改、查操作，通过 RESTful API 实现对用户设置数据的访问和修改。通过集成 Entity Framework Core (EF Core) 和 OracleDbContext，该控制器能够高效地与数据库进行交互，处理用户设置表相关的请求。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserSetting()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-setting
+	\item \textbf{功能}：获取用户设置表的所有数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetUserSettingByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/user-setting/{id}
+	\item \textbf{功能}：根据主键（ID）获取用户设置表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	DeleteUserSettingByPk(int id)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：DELETE
+	\item \textbf{Router}：/api/user-setting/{id}
+	\item \textbf{功能}：根据主键（ID）删除用户设置表的数据。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	PostUserSetting(UserSetting userSetting)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/user-setting
+	\item \textbf{功能}：向用户设置表添加数据项（不需要提供 UserId，因为它是由系统自动生成的）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UpdateUserSetting(int id, UserSetting userSetting)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：PUT
+	\item \textbf{Router}：/api/user-setting/{id}
+	\item \textbf{功能}：根据主键（ID）更新用户设置表的数据。
+\end{itemize}
+
+\subsubsection{对象存储OSS控制器}
+
+\paragraph{功能作用}
+
+OSSController 是一个用于管理对象存储 OSS（Object Storage Service）操作的控制器类。该控制器实现了文件的上传功能，支持上传头像、新闻封面图片、新闻内容图片、新闻内容视频、帖子图片、宠物领养图片和宠物领养附件。使用 Aliyun OSS SDK 进行文件上传操作，并对上传过程中可能出现的异常进行处理，确保系统的稳定性和可靠性。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadAvatar(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-avatar
+	\item \textbf{功能}：上传头像（.jpg 文件）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadNewsCoverImage(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-news-cover-image
+	\item \textbf{功能}：上传新闻封面图片（.jpg 文件）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadNewsContentImage(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-news-content-image
+	\item \textbf{功能}：上传新闻内容图片（.jpg 文件）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadNewsContentVideo(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-news-content-video
+	\item \textbf{功能}：上传新闻内容视频（.mp4 文件）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadPostImage(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-post-image
+	\item \textbf{功能}：上传帖子图片（.jpg 文件）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadPetAdoptionImage(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-pet-adoption-image
+	\item \textbf{功能}：上传宠物领养图片（.jpg 文件）。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	UploadPetAdoptionAppendix(IFormFile file)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/upload-pet-adoption-appendix
+	\item \textbf{功能}：上传宠物领养附件（.pdf 文件）。
+\end{itemize}
+
+\subsubsection{宠物百科控制器}
+
+\paragraph{功能作用}
+
+PetEncyclopediaController 是一个处理与宠物百科相关的 API 请求的控制器。它提供了获取宠物百科菜单索引数据、宠物分类页面数据以及宠物子类页面数据的功能。通过这些接口，用户可以获取宠物百科的分类、子类及其详细信息，支持多语言数据展示。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetMenuIndex(string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-encyclopedia/menu-index/{language}
+	\item \textbf{功能}：获取宠物百科的菜单索引数据，包括分类及其子分类。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCategoryPage(int id, string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-encyclopedia/pet-category-page/{id}-{language}
+	\item \textbf{功能}：获取指定宠物分类的详细页面数据，包括分类名称、描述、图片及子分类。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetSubcategoryPage(int id, string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/pet-encyclopedia/pet-subcategory-page/{id}-{language}
+	\item \textbf{功能}：获取指定宠物子类的详细页面数据，包括子类名称、描述、图片、原产地、体型、被毛、寿命、性格、饮食等信息。
+\end{itemize}
+
+\subsubsection{搜索控制器}
+
+\paragraph{功能作用}
+
+SearchController 负责处理与搜索相关的 API 请求。它提供了对宠物分类、宠物子类、宠物护理指导、新闻、帖子、帖子评论以及宠物领养信息的搜索功能，支持根据语言获取相关数据。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCategorySearchData(string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/pet-category/{language}
+	\item \textbf{功能}：根据语言获取宠物分类的搜索数据，包括分类ID、名称和描述。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetSubcategorySearchData(string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/pet-subcategory/{language}
+	\item \textbf{功能}：根据语言获取宠物子类的搜索数据，包括子类ID、名称、描述、原产地、体型、被毛、寿命、性格和饮食等信息。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetCareGuideSearchData(string language)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/pet-care-guide/{language}
+	\item \textbf{功能}：根据语言获取宠物护理指导的搜索数据，包括子类ID、标题和内容。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetNewsSearchData()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/news
+	\item \textbf{功能}：获取新闻的搜索数据，包括新闻ID、标题、摘要和内容。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostSearchData()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/post
+	\item \textbf{功能}：获取帖子的搜索数据，包括帖子ID、标题和内容。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPostCommentSearchData()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/post-comment
+	\item \textbf{功能}：获取帖子评论的搜索数据，包括帖子ID、标题和评论内容。
+\end{itemize}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	GetPetAdoptionSearchData()
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：GET
+	\item \textbf{Router}：/api/search/pet-adoption
+	\item \textbf{功能}：获取宠物领养的搜索数据，包括领养ID、名称、地点、原因、健康状况、疫苗接种情况、护理需求、饮食需求、行为和备注。
+\end{itemize}
+
+\subsubsection{智谱清言AI控制器}
+
+\paragraph{功能作用}
+
+ZhipuAIController 负责处理与智谱清言 AI 相关的 API 请求。它提供了一个接口，用于通过智谱清言 AI 的宠物助理服务获取基于给定消息的响应。
+
+\paragraph{接口}
+
+\begin{minted}[baselinestretch=1]{csharp}
+	ZhipuAIPetAssistant(List<MessageItem> messages)
+\end{minted}
+
+\begin{itemize}
+	\item \textbf{方法类型}：POST
+	\item \textbf{Router}：/api/zhipu-ai-pet-assistant
+	\item \textbf{功能}：调用智谱清言 AI 的宠物助理服务，处理用户提供的消息列表，并返回 AI 生成的响应。
+\end{itemize}

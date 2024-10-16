@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1427" dy="613" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="0l1ZDfQz6t6TS9JeDwpR-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="134" y="310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="0l1ZDfQz6t6TS9JeDwpR-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="134" y="310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="0l1ZDfQz6t6TS9JeDwpR-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="134" y="310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0l1ZDfQz6t6TS9JeDwpR-1" target="0l1ZDfQz6t6TS9JeDwpR-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-1" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;点击&lt;/font&gt;&lt;font face=&quot;宋体&quot;&gt;“&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 10.5pt; background-color: initial;&quot;&gt;宠物领养注意事项&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 10.5pt; background-color: initial;&quot;&gt;”按钮&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="254" y="220" width="216" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0l1ZDfQz6t6TS9JeDwpR-2" target="0l1ZDfQz6t6TS9JeDwpR-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-2" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;点击&lt;/font&gt;&lt;font face=&quot;宋体&quot;&gt;“&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 10.5pt; background-color: initial;&quot;&gt;宠物领养条件&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 10.5pt; background-color: initial;&quot;&gt;”按钮&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="254" y="290" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0l1ZDfQz6t6TS9JeDwpR-3" target="0l1ZDfQz6t6TS9JeDwpR-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-3" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;点击&lt;/font&gt;&lt;font face=&quot;宋体&quot;&gt;“&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 10.5pt; background-color: initial;&quot;&gt;宠物领养合同&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-family: 宋体; font-size: 10.5pt;&quot;&gt;”按钮&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="254" y="360" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-4" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;用户可以查看宠物领养注意事项的详细内容&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="510" y="220" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-5" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;用户可以查看宠物领养条件的详细内容&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="507" y="290" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0l1ZDfQz6t6TS9JeDwpR-6" target="0l1ZDfQz6t6TS9JeDwpR-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-6" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;用户可以查看宠物领养合同的详细内容，并根据需要选择下载合同示例&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="507" y="360" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0l1ZDfQz6t6TS9JeDwpR-16" target="0l1ZDfQz6t6TS9JeDwpR-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-16" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;点击&lt;/font&gt;&lt;font face=&quot;宋体&quot;&gt;“下载&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 10.5pt; background-color: initial;&quot;&gt;合同&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-family: 宋体; font-size: 10.5pt;&quot;&gt;”按钮&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="870" y="360" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0l1ZDfQz6t6TS9JeDwpR-18" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;mso-spacerun:&#39;yes&#39;;font-family:宋体;mso-ascii-font-family:Calibri;&lt;br/&gt;mso-hansi-font-family:Calibri;mso-bidi-font-family:&#39;Times New Roman&#39;;font-size:10.5000pt;&lt;br/&gt;mso-font-kerning:1.0000pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;用户可以下载宠物领养合同的&lt;/font&gt;&lt;font face=&quot;Calibri&quot;&gt;Word&lt;/font&gt;&lt;font face=&quot;宋体&quot;&gt;或&lt;/font&gt;&lt;font face=&quot;Calibri&quot;&gt;PDF&lt;/font&gt;&lt;font face=&quot;宋体&quot;&gt;文档&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1110" y="360" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bMRF-yodF0ELmrQx3sRd-0" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;进入宠物领养须知界面&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-30" y="290" width="166" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

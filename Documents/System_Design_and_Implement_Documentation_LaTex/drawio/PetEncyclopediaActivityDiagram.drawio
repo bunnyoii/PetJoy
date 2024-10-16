@@ -1,0 +1,197 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="第 1 页" id="sluaxGrduCjbnL9CbBjF">
+    <mxGraphModel dx="2103" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fUyLFVSnrEJY353sXyHH-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="150" as="sourcePoint" />
+            <mxPoint x="140" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wU7gAOrtelW3UNwHTs9e-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;浏览宠物百科界面&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-7" target="fUyLFVSnrEJY353sXyHH-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-7" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;点击宠物图标&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-8" target="fUyLFVSnrEJY353sXyHH-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-8" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;悬浮宠物图标&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-250" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-9" target="fUyLFVSnrEJY353sXyHH-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-9" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;点击宠物卡片&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-16" target="fUyLFVSnrEJY353sXyHH-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-16" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;进入宠物基础信息界面&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-18" target="fUyLFVSnrEJY353sXyHH-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-40" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="70" y="690" />
+              <mxPoint x="-70" y="690" />
+              <mxPoint x="-70" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-18" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;点击侧栏菜单&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="10" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-19" target="fUyLFVSnrEJY353sXyHH-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-19" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;点击宠物卡片&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-22" target="fUyLFVSnrEJY353sXyHH-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-22" target="fUyLFVSnrEJY353sXyHH-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-22" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="107" y="570" width="66" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.575;entryY=0.292;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-30" target="fUyLFVSnrEJY353sXyHH-62" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="1090" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="1080" />
+              <mxPoint x="220" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-30" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;宠物详细信息界面&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;1.起源地&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;2. 体型&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;3. 寿命&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;4.性情&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;5.毛色&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;6.饮食习惯&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;7.起源地图&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;8.护理指南&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;9.描述&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="770" width="120" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-32" target="fUyLFVSnrEJY353sXyHH-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-32" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;查看宠物子类菜单&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-250" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-34" target="fUyLFVSnrEJY353sXyHH-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-34" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;选择宠物子类&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-250" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-36" target="fUyLFVSnrEJY353sXyHH-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-36" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;宠物详细信息界面&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;1.起源地&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;2. 体型&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;3. 寿命&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;4.性情&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;5.毛色&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;6.饮食习惯&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;7.起源地图&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;8.护理指南&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;9.描述&lt;/span&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-250" y="770" width="120" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-38" target="fUyLFVSnrEJY353sXyHH-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-38" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;宠物详细信息界面&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;1.起源地&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;2. 体型&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;3. 寿命&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;4.性情&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;5.毛色&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;6.饮食习惯&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;7.起源地图&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;8.护理指南&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;9.描述&lt;/span&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="770" width="120" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-43" target="fUyLFVSnrEJY353sXyHH-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-43" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-190" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-43" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-223" y="1030" width="66" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-70" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-45" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;点击侧栏菜单&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-130" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-48" target="fUyLFVSnrEJY353sXyHH-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-48" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="447" y="1025" width="66" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-53" target="fUyLFVSnrEJY353sXyHH-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-53" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;点击侧栏菜单&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="294" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-62" value="" style="line;strokeWidth=4;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="1" vertex="1">
+          <mxGeometry x="-240" y="1110" width="800" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.901;entryY=-0.292;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="fUyLFVSnrEJY353sXyHH-48" target="fUyLFVSnrEJY353sXyHH-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-69" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="130" y="1143" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-70" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="144.5" y="1113" as="sourcePoint" />
+            <mxPoint x="144.5" y="1143" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fUyLFVSnrEJY353sXyHH-72" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="125" y="120" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wU7gAOrtelW3UNwHTs9e-1" value="" style="line;strokeWidth=5;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="1" vertex="1">
+          <mxGeometry x="-310" y="320" width="890" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="wU7gAOrtelW3UNwHTs9e-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-190.5" y="378" as="targetPoint" />
+            <mxPoint x="-190.5" y="328" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-190.5" y="348" />
+              <mxPoint x="-190.5" y="348" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wU7gAOrtelW3UNwHTs9e-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="139.5" y="380" as="targetPoint" />
+            <mxPoint x="139.5" y="330" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="139.5" y="350" />
+              <mxPoint x="139.5" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wU7gAOrtelW3UNwHTs9e-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="479.5" y="378" as="targetPoint" />
+            <mxPoint x="479.5" y="328" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="479.5" y="348" />
+              <mxPoint x="479.5" y="348" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
