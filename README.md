@@ -82,7 +82,7 @@ The code and materials contained in this repository are intended for personal le
 
 ## 相关链接
 
-本项目优化设计后的SRS / SDS文档在此仓库：[](https://github.com/bunnyoii/Systems_Analysis_and_Design_2022)
+本项目优化设计后的SRS / SDS文档在此仓库：[Systems_Analysis_and_Design](https://github.com/bunnyoii/Systems_Analysis_and_Design_2022)
 
 ## 文档更新日期
 
